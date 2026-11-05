@@ -1,0 +1,11 @@
+{% extends "_status_page.html" %}
+{% block title %}Résumé Request Received{% endblock %}
+{% block eyebrow %}Résumé request{% endblock %}
+{% block heading %}Thanks, {{ name }}. Your request is in.{% endblock %}
+{% block body %}
+      <p class="status-lead">Sameer has been notified. Once he approves it, the résumé will be emailed to <strong>{{ email }}</strong>, usually within a day.</p>
+      <div class="status-actions">
+        <a href="{{ url_for('index') }}" class="button button-primary">Back to Portfolio</a>
+        <a href="{{ url_for('index') }}#chat" class="text-link">Ask Laddu, the AI assistant <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+{% endblock %}

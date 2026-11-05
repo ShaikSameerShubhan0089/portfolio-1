@@ -1,0 +1,11 @@
+New resume access request
+
+Name: {{ name }}
+Email: {{ email }}
+
+Review and send the resume:
+{{ approve_link }}
+
+The approval link expires in {{ valid_days }} days. Replying to this email goes to the requester.
+
+Sent automatically from your portfolio website.

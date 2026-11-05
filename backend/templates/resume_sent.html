@@ -1,0 +1,10 @@
+{% extends "_status_page.html" %}
+{% block title %}Résumé Sent{% endblock %}
+{% block eyebrow %}Résumé delivered{% endblock %}
+{% block heading %}Résumé sent to {{ name }}.{% endblock %}
+{% block body %}
+      <p class="status-lead">The résumé was emailed to <strong>{{ email }}</strong>.</p>
+      <div class="status-actions">
+        <a href="{{ url_for('index') }}" class="button button-primary">Back to Portfolio</a>
+      </div>
+{% endblock %}

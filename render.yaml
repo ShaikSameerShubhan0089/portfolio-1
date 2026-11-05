@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: sameer-portfolio-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn myapp:app --workers 1 --threads 4 --timeout 60
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: SECRET_KEY
+        generateValue: true
+      - key: BREVO_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: SENDER_EMAIL
+        value: shaiksameershubhan71@gmail.com
+      - key: OWNER_EMAIL
+        value: shaiksameershubhan71@gmail.com
+      - key: SENDER_PASSWORD
+        sync: false
+      - key: SMTP_SERVER
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "465"
+      - key: DATABASE_URL
+        sync: false
+      - key: ANALYTICS_USERNAME
+        sync: false
+      - key: ANALYTICS_PASSWORD
+        sync: false
+      - key: FRONTEND_ORIGIN
+        sync: false
+      - key: SITE_URL
+        sync: false

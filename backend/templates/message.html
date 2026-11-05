@@ -1,0 +1,11 @@
+{% extends "_status_page.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block eyebrow %}{{ eyebrow }}{% endblock %}
+{% block heading %}{{ title }}{% endblock %}
+{% block body %}
+      <p class="status-lead">{{ message }}</p>
+      <div class="status-actions">
+        <a href="{{ url_for('index') }}" class="button button-primary">Back to Portfolio</a>
+        <a href="{{ url_for('index') }}#contact" class="text-link">Contact Sameer <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+{% endblock %}

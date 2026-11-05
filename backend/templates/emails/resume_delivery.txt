@@ -1,0 +1,16 @@
+Dear {{ name }},
+
+Thank you for your interest in connecting with me.
+
+I'm glad to share my resume with you. I have a strong foundation in AI and Data Science and have applied it to projects in automation, backend development, computer vision, and intelligent systems.
+
+My resume is attached for your review. I look forward to hearing about any opportunities where I can contribute and grow.
+
+Please feel free to get in touch with any questions.
+
+Warm regards,
+Sameer Shaik
+AI and Automation Engineer
+shaiksameershubhan71@gmail.com
+LinkedIn: https://www.linkedin.com/in/shaik-sameer-shubhan-2598563a0
+GitHub: https://github.com/ShaikSameerShubhan0089

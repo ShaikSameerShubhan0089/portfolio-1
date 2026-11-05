@@ -1,0 +1,12 @@
+{% extends "_status_page.html" %}
+{% block title %}Approve Résumé Request{% endblock %}
+{% block eyebrow %}Résumé approval{% endblock %}
+{% block heading %}Send your résumé to {{ name }}?{% endblock %}
+{% block body %}
+      <p class="status-lead">The résumé PDF will be emailed to <strong>{{ email }}</strong>. This can’t be undone.</p>
+      <form method="post" action="{{ url_for('send_approved_resume') }}" class="status-actions">
+        <input type="hidden" name="token" value="{{ token }}">
+        <button type="submit" class="button button-primary">Approve and send résumé</button>
+        <a href="mailto:{{ email }}?subject=Regarding%20your%20resume%20request" class="button button-secondary">Reply instead</a>
+      </form>
+{% endblock %}

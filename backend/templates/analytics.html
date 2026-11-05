@@ -1,0 +1,25 @@
+{% extends "_status_page.html" %}
+{% block title %}Portfolio Analytics{% endblock %}
+{% block eyebrow %}Private dashboard{% endblock %}
+{% block heading %}Portfolio analytics{% endblock %}
+{% block body %}
+      <div class="analytics-toolbar"><div><p class="analytics-kicker">Live overview</p><p class="analytics-note">A quick view of who is browsing and what visitors ask Laddu.</p></div><div class="analytics-toolbar-actions"><span class="analytics-live"><i></i> Tracking active</span><form method="post" action="{{ url_for('clear_analytics') }}" onsubmit="return confirm('Erase all visits, questions, and saved answers permanently?');"><button class="analytics-clear-button" type="submit">Erase all data</button></form></div></div>
+      <section class="analytics-summary" aria-label="Analytics summary">
+        <div class="analytics-stat analytics-stat-primary"><span class="analytics-stat-label">Unique browsers</span><strong>{{ summary.visitors }}</strong><small>Distinct visitor cookies</small></div>
+        <div class="analytics-stat"><span class="analytics-stat-label">Page visits</span><strong>{{ summary.visits }}</strong><small>All recorded visits</small></div>
+        <div class="analytics-stat"><span class="analytics-stat-label">Questions</span><strong>{{ summary.questions }}</strong><small>Asked to Laddu</small></div>
+        <div class="analytics-stat"><span class="analytics-stat-label">Answer rate</span><strong>{{ ((summary.answered / summary.questions * 100) if summary.questions else 0)|round|int }}%</strong><small>{{ summary.answered }} answered successfully</small></div>
+      </section>
+
+      <section class="analytics-section" aria-labelledby="questions-title">
+        <div class="analytics-section-head"><div><p class="analytics-kicker">Visitor intent</p><h2 id="questions-title">What people are asking</h2></div><span class="analytics-count">{{ questions|length }} latest</span></div>
+        {% if questions %}<div class="question-feed">{% for item in questions %}<article class="question-card {% if not item.success %}question-card-muted{% endif %}"><div class="question-card-top"><time class="analytics-time" data-time="{{ item.time_iso }}">{{ item.asked_at }}</time><span class="analytics-status {{ 'status-good' if item.success else 'status-muted' }}"><i></i>{{ "Answered" if item.success else "Not answered" }}</span></div><p class="question-text">{{ item.question }}</p>{% if item.reply %}<details class="question-answer"><summary>View Laddu's answer</summary><p>{{ item.reply }}</p></details>{% endif %}</article>{% endfor %}</div>{% else %}<p class="analytics-empty">No questions recorded yet.</p>{% endif %}
+      </section>
+
+      <section class="analytics-section" aria-labelledby="visits-title">
+        <div class="analytics-section-head"><div><p class="analytics-kicker">Audience</p><h2 id="visits-title">Recent visits</h2></div><span class="analytics-count">{{ visits|length }} latest</span></div>
+        {% if visits %}<div class="visit-feed">{% for item in visits %}<article class="visit-row"><div class="visit-icon" aria-hidden="true">↗</div><div class="visit-main"><strong>{{ item.path }}</strong><span>{{ item.referrer_label }} · {{ item.browser_label }}</span></div><time class="analytics-time visit-time" data-time="{{ item.time_iso }}">{{ item.visited_at }}</time></article>{% endfor %}</div>{% else %}<p class="analytics-empty">No visits recorded yet.</p>{% endif %}
+      </section>
+      <p class="analytics-privacy">Privacy-first tracking: anonymous visitor IDs only. No IP addresses are stored.</p>
+      <script>document.querySelectorAll("[data-time]").forEach((node) => { const date = new Date(node.dataset.time); if (Number.isNaN(date.getTime())) return; node.textContent = new Intl.DateTimeFormat(undefined, { day: "2-digit", month: "short", hour: "numeric", minute: "2-digit" }).format(date); node.title = date.toLocaleString(); });</script>
+{% endblock %}

@@ -1,0 +1,14 @@
+<html>
+  <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; color: #102136;">
+    <h2>New Resume Access Request</h2>
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p>Choose how you want to respond:</p>
+    <p>
+      <a href="{{ approve_link }}" style="display:inline-block;background-color:#0ef;color:#000;padding:12px 22px;text-decoration:none;border-radius:6px;font-weight:bold;margin:0 10px 10px 0;">Review and Send Resume</a>
+      <a href="{{ deny_link }}" style="display:inline-block;background-color:#ff4d4d;color:#fff;padding:12px 22px;text-decoration:none;border-radius:6px;font-weight:bold;margin:0 10px 10px 0;">Reply Instead</a>
+    </p>
+    <p style="font-size: 0.85rem; color: #555;">The approval link expires in {{ valid_days }} days. Replying to this email goes to the requester.</p>
+    <p style="font-size: 0.85rem; color: #777; margin-top: 24px;">Sent automatically from your portfolio website.</p>
+  </body>
+</html>
