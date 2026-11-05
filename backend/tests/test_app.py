@@ -95,6 +95,42 @@ def test_index_renders(client):
     assert "portfolio_visitor" not in response.headers.get("Set-Cookie", "")
 
 
+def test_health_endpoint(client):
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.get_json() == {"status": "ok"}
+
+
+def test_production_cors_allows_only_configured_frontend(client, monkeypatch):
+    origin = "https://shaiksameershubhan.netlify.app"
+    monkeypatch.setattr(myapp, "FRONTEND_ORIGIN", origin)
+    monkeypatch.setenv("FLASK_DEBUG", "0")
+
+    allowed = client.options(
+        "/api/chat",
+        headers={"Origin": origin, "Access-Control-Request-Method": "POST"},
+    )
+    assert allowed.headers["Access-Control-Allow-Origin"] == origin
+    assert allowed.headers["Access-Control-Allow-Credentials"] == "true"
+    assert "POST" in allowed.headers["Access-Control-Allow-Methods"]
+
+    local = client.options(
+        "/api/chat",
+        headers={"Origin": "http://127.0.0.1:5500", "Access-Control-Request-Method": "POST"},
+    )
+    assert "Access-Control-Allow-Origin" not in local.headers
+
+
+def test_development_cors_adds_local_origins(client, monkeypatch):
+    monkeypatch.setattr(myapp, "FRONTEND_ORIGIN", "https://shaiksameershubhan.netlify.app")
+    monkeypatch.setenv("FLASK_DEBUG", "1")
+    response = client.options(
+        "/api/chat",
+        headers={"Origin": "http://localhost:5500", "Access-Control-Request-Method": "POST"},
+    )
+    assert response.headers["Access-Control-Allow-Origin"] == "http://localhost:5500"
+
+
 def test_analytics_dashboard_requires_auth(client, monkeypatch):
     monkeypatch.setenv("ANALYTICS_USERNAME", "admin")
     monkeypatch.setenv("ANALYTICS_PASSWORD", "test-password")

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
+  <meta name="google-site-verification" content="2JrlJ57Hy-czKFlY3LRKd6dORj3yu8Pttzv36jqKtfE" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shaik Sameer | Sam | Software Developer &amp; AI/ML Engineer</title>
@@ -20,12 +21,14 @@
   <meta property="og:title" content="Shaik Sameer | Sam | Software Developer &amp; AI/ML Engineer">
   <meta property="og:description" content="The portfolio of Shaik Sameer (Sam): software development, AI/ML projects, experience, and contact details.">
   <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Shaik Sameer Portfolio">
   <meta property="og:url" content="{{ site_url }}/">
   <meta property="og:image" content="{{ site_url }}/static/images/shaik-sameer-profile.webp">
   <meta property="og:image:alt" content="Portrait of Shaik Sameer">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Shaik Sameer | Sam | Software Developer &amp; AI/ML Engineer">
   <meta name="twitter:description" content="Projects and experience from Shaik Sameer, also known as Sam.">
+  <meta name="twitter:url" content="{{ site_url }}/">
   <meta name="twitter:image" content="{{ site_url }}/static/images/shaik-sameer-profile.webp">
   {% include "_head_assets.html" %}
   <script type="importmap">{"imports": {"three": "{{ url_for('static', filename='vendor/three/three.module.min.js') }}"}}</script>
@@ -643,8 +646,13 @@
     </div>
   </div>
 
+  {% if backend_mode %}
+  <script src="{{ url_for('static', filename='config.js') }}"></script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+  {% else %}
   <script src="config.js"></script>
   <script src="app.js"></script>
+  {% endif %}
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
 </body>

@@ -5,6 +5,7 @@ services:
     rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn myapp:app --workers 1 --threads 4 --timeout 60
+    healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.8
@@ -33,4 +34,6 @@ services:
       - key: FRONTEND_ORIGIN
         sync: false
       - key: SITE_URL
+        sync: false
+      - key: PUBLIC_BASE_URL
         sync: false

@@ -26,7 +26,7 @@ def main():
     )
     if args.production and placeholder:
         raise SystemExit(
-            "Production build stopped: set SITE_URL in backend/.env to the final public HTTPS domain, then retry."
+            "Production build stopped: set SITE_URL to the final public HTTPS frontend URL in the build environment (Netlify) or backend/.env, then retry."
         )
     if placeholder:
         print("WARNING: SITE_URL is still a placeholder; this output is for local preview only.")
@@ -35,7 +35,8 @@ def main():
     output = project_root / "frontend" / "index.html"
     copytree(project_root / "frontend" / "static", Path(__file__).resolve().parent / "static", dirs_exist_ok=True)
     with app.test_request_context("/", base_url="http://localhost:5500"):
-        html = app.jinja_env.get_template("index.html").render(site_url=SITE_URL)
+        html = app.jinja_env.get_template("index.html").render(site_url=SITE_URL, backend_mode=False)
+    html = "\n".join(line.rstrip() for line in html.splitlines()) + "\n"
     output.write_text(html, encoding="utf-8")
     site = escape(SITE_URL.rstrip("/"))
     sitemap = f'''<?xml version="1.0" encoding="UTF-8"?>

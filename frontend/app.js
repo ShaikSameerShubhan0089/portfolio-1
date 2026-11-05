@@ -1,5 +1,5 @@
 (() => {
-  const apiBase = window.PORTFOLIO_API_BASE || "http://localhost:5000";
+  const apiBase = window.PORTFOLIO_API_BASE || "";
   const resumeForm = document.getElementById("resumeForm");
   const resumeStatus = document.getElementById("resumeStatus");
   const consent = document.getElementById("analyticsConsent");
@@ -15,8 +15,9 @@
         method: "POST", headers: { "Content-Type": "application/json" }, credentials: "include",
         body: JSON.stringify(Object.fromEntries(new FormData(resumeForm))),
       });
-      const result = await response.json();
-      if (!response.ok) throw new Error(result.error || "Request failed. Please try again.");
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || "Your request could not be sent. Please try again later.");
+      if (!result.message) throw new Error("The server returned an unexpected response. Please try again later.");
       resumeStatus.textContent = result.message;
       resumeForm.reset();
     } catch (error) {
