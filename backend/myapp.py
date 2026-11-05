@@ -26,6 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent
 load_dotenv(BASE_DIR / ".env")
 load_dotenv(BASE_DIR.parent / ".env")
 
+DEFAULT_SITE_URL = "https://shaiksameershubhan.netlify.app"
+DEFAULT_BACKEND_URL = "https://sameer-portfolio-backend-4ep8.onrender.com"
+SITE_URL = os.getenv("SITE_URL", DEFAULT_SITE_URL).rstrip("/")
+FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", SITE_URL).rstrip("/")
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("portfolio")
 
@@ -43,7 +48,9 @@ app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1)
 @app.after_request
 def add_frontend_cors(response):
     origin = request.headers.get("Origin", "").rstrip("/")
-    allowed_origins = {FRONTEND_ORIGIN, "http://127.0.0.1:5500"}
+    allowed_origins = {FRONTEND_ORIGIN}
+    if os.getenv("FLASK_DEBUG", "0").strip().lower() in {"1", "true", "yes"}:
+        allowed_origins.update({"http://127.0.0.1:5500", "http://localhost:5500"})
     if origin in allowed_origins:
         response.headers["Access-Control-Allow-Origin"] = origin
         response.headers["Access-Control-Allow-Credentials"] = "true"
@@ -67,9 +74,7 @@ RESUME_PATH = BASE_DIR / "private" / "sameer_resume.pdf"
 
 SENDER_EMAIL = os.getenv("SENDER_EMAIL", "shaiksameershubhan71@gmail.com")
 OWNER_EMAIL = os.getenv("OWNER_EMAIL", SENDER_EMAIL)
-PUBLIC_BASE_URL = os.getenv("PUBLIC_BASE_URL", "").rstrip("/")
-FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://localhost:5500").rstrip("/")
-SITE_URL = os.getenv("SITE_URL", "https://your-domain.example").rstrip("/")
+PUBLIC_BASE_URL = os.getenv("PUBLIC_BASE_URL", DEFAULT_BACKEND_URL).rstrip("/")
 
 APPROVAL_SALT = "resume-approval"
 APPROVAL_MAX_AGE = 7 * 24 * 60 * 60
@@ -85,7 +90,7 @@ CHAT_UNAVAILABLE = "Laddu is unavailable right now. Please try again in a moment
 
 PORTFOLIO_FACTS = """
 PERSONAL INFORMATION:
-- Name: Sameer Shaik (full name: Shaik Sameer Shubhan)
+- Name: Shaik Sameer (also known as Sameer, Sam, and Shaik Sameer Shubhan)
 - Email: shaiksameershubhan71@gmail.com
 - LinkedIn: https://www.linkedin.com/in/shaik-sameer-shubhan-2598563a0
 - GitHub: https://github.com/ShaikSameerShubhan0089
@@ -340,7 +345,12 @@ def send_email(
 
 @app.route("/")
 def index():
-    return render_template("index.html", site_url=SITE_URL)
+    return render_template("index.html", site_url=SITE_URL, backend_mode=True)
+
+
+@app.route("/health")
+def health():
+    return jsonify({"status": "ok"}), 200
 
 
 @app.route("/api/visit", methods=["POST"])

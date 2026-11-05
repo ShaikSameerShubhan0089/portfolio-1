@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://your-domain.example/</loc>
+    <loc>https://shaiksameershubhan.netlify.app/</loc>
     <changefreq>monthly</changefreq>
-    <image:image><image:loc>https://your-domain.example/static/images/shaik-sameer-profile.webp</image:loc><image:title>Shaik Sameer profile portrait</image:title></image:image>
-    <image:image><image:loc>https://your-domain.example/static/images/shaik-sameer-college-event.webp</image:loc><image:title>Shaik Sameer speaking at a college event</image:title></image:image>
-    <image:image><image:loc>https://your-domain.example/static/images/shaik-sameer-casual-portrait.webp</image:loc><image:title>Shaik Sameer casual portrait</image:title></image:image>
+    <image:image><image:loc>https://shaiksameershubhan.netlify.app/static/images/shaik-sameer-profile.webp</image:loc><image:title>Shaik Sameer profile portrait</image:title></image:image>
+    <image:image><image:loc>https://shaiksameershubhan.netlify.app/static/images/shaik-sameer-college-event.webp</image:loc><image:title>Shaik Sameer speaking at a college event</image:title></image:image>
+    <image:image><image:loc>https://shaiksameershubhan.netlify.app/static/images/shaik-sameer-casual-portrait.webp</image:loc><image:title>Shaik Sameer casual portrait</image:title></image:image>
   </url>
 </urlset>
