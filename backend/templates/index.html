@@ -4,32 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shaik Sameer | Sam | Software Developer &amp; AI/ML Engineer</title>
-  <script>document.documentElement.classList.replace("no-js", "js");</script>
-  <meta name="description" content="Meet Shaik Sameer, also known as Sam and Sameer — a software developer and AI/ML engineer building thoughtful automation, backend, and machine-learning projects.">
+  <script>
+    (function (root) {
+      root.classList.replace("no-js", "js");
+      // Reserve the 3D stages before first layout; main.js removes this if WebGL can't start.
+      if (window.WebGLRenderingContext && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        root.classList.add("has-3d");
+      }
+    })(document.documentElement);
+  </script>
+  <meta name="description" content="Shaik Sameer, also known as Sam, is a software developer and AI/ML engineer building automation, backend systems, and machine-learning projects.">
   <meta name="author" content="Shaik Sameer">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="{{ site_url }}/">
   <meta property="og:title" content="Shaik Sameer | Sam | Software Developer &amp; AI/ML Engineer">
-  <meta property="og:description" content="The personal portfolio of Shaik Sameer (Sam): software development, AI/ML projects, experience, and contact details.">
+  <meta property="og:description" content="The portfolio of Shaik Sameer (Sam): software development, AI/ML projects, experience, and contact details.">
   <meta property="og:type" content="profile">
   <meta property="og:url" content="{{ site_url }}/">
   <meta property="og:image" content="{{ site_url }}/static/images/shaik-sameer-profile.webp">
-  <meta property="og:image:alt" content="Shaik Sameer, software developer and AI/ML engineer">
+  <meta property="og:image:alt" content="Portrait of Shaik Sameer">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Shaik Sameer | Sam | Software Developer &amp; AI/ML Engineer">
-  <meta name="twitter:description" content="Projects, experience, and contact details for Shaik Sameer, also known as Sam and Sameer.">
+  <meta name="twitter:description" content="Projects and experience from Shaik Sameer, also known as Sam.">
   <meta name="twitter:image" content="{{ site_url }}/static/images/shaik-sameer-profile.webp">
-  <meta name="twitter:image:alt" content="Portrait of Shaik Sameer">
   {% include "_head_assets.html" %}
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/brand.css') }}">
-  <script type="importmap">
-    {"imports":{"three":"{{ url_for('static', filename='vendor/three/three.module.min.js') }}"}}
-  </script>
+  <script type="importmap">{"imports": {"three": "{{ url_for('static', filename='vendor/three/three.module.min.js') }}"}}</script>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {"@type":"Person","@id":"{{ site_url }}/#person","name":"Shaik Sameer","alternateName":["Sameer","Sam","Laddu"],"jobTitle":"Software Developer","description":"Software Developer and AI/ML Engineer interested in practical automation, backend systems, and machine learning.","url":"{{ site_url }}/","image":"{{ site_url }}/static/images/shaik-sameer-profile.webp","sameAs":["https://www.linkedin.com/in/shaik-sameer-shubhan-2598563a0","https://github.com/ShaikSameerShubhan0089"]},
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"Person","@id":"{{ site_url }}/#person","name":"Shaik Sameer","alternateName":["Sameer","Sam"],"jobTitle":"Software Developer","description":"Software Developer and AI/ML Engineer","url":"{{ site_url }}/","image":"{{ site_url }}/static/images/shaik-sameer-profile.webp","sameAs":["https://www.linkedin.com/in/shaik-sameer-shubhan-2598563a0","https://github.com/ShaikSameerShubhan0089"]},
       {"@type":"WebSite","@id":"{{ site_url }}/#website","url":"{{ site_url }}/","name":"Shaik Sameer | Sam | Software Developer & AI/ML Engineer","inLanguage":"en","about":{"@id":"{{ site_url }}/#person"}},
       {"@type":"ProfilePage","@id":"{{ site_url }}/#profile","url":"{{ site_url }}/","name":"Shaik Sameer — Personal Portfolio","mainEntity":{"@id":"{{ site_url }}/#person"},"isPartOf":{"@id":"{{ site_url }}/#website"}}
     ]
@@ -38,7 +42,9 @@
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="scene" id="scene" data-module="{{ url_for('static', filename='js/scene.js') }}" aria-hidden="true"></div>
+
+  <!-- 3D journey: decorative only. Static background shows until (and unless) WebGL starts. -->
+  <div class="scene" id="scene" aria-hidden="true" data-module="{{ url_for('static', filename='js/scene.js') }}"></div>
 
   <header class="site-header">
     <div class="header-bar">
@@ -53,24 +59,9 @@
 
       <nav class="site-nav" id="siteNav" aria-label="Main">
         <ul class="nav-links">
-          <li><a href="#intro">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#work">Projects</a></li>
+          <li><a href="#work">Work</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li class="nav-more-item">
-            <details class="nav-more">
-              <summary>More <span aria-hidden="true">⌄</span></summary>
-              <div class="nav-more-menu" aria-label="More sections">
-                <a href="#skills">Technical skills</a>
-                <a href="#education">Education</a>
-                <a href="#certifications">Certifications</a>
-                <a href="#achievements">Achievements</a>
-                <a href="#blog">Blog &amp; articles</a>
-                <a href="#lab">Laddu &amp; experiments</a>
-              </div>
-            </details>
-          </li>
+          <li><a href="#lab">Lab</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <a href="#resume" class="button button-primary nav-cta">Request résumé</a>
@@ -82,10 +73,10 @@
   <nav class="chapter-rail" aria-label="Chapters">
     <span class="rail-track" aria-hidden="true"><span class="rail-fill"></span></span>
     <ol>
-      <li><a href="#intro" data-chapter="intro"><span class="rail-index">01</span><span class="rail-label">Home</span></a></li>
-      <li><a href="#work" data-chapter="work"><span class="rail-index">02</span><span class="rail-label">Projects<span class="rail-count" hidden></span></span></a></li>
+      <li><a href="#intro" data-chapter="intro"><span class="rail-index">01</span><span class="rail-label">Intro</span></a></li>
+      <li><a href="#work" data-chapter="work"><span class="rail-index">02</span><span class="rail-label">Work<span class="rail-count" hidden></span></span></a></li>
       <li><a href="#experience" data-chapter="experience"><span class="rail-index">03</span><span class="rail-label">Experience</span></a></li>
-          <li><a href="#lab" data-chapter="lab"><span class="rail-index">04</span><span class="rail-label">Experiments</span></a></li>
+      <li><a href="#lab" data-chapter="lab"><span class="rail-index">04</span><span class="rail-label">Lab</span></a></li>
       <li><a href="#contact" data-chapter="contact"><span class="rail-index">05</span><span class="rail-label">Contact</span></a></li>
     </ol>
   </nav>
@@ -97,24 +88,19 @@
         <div class="hero">
           <div class="hero-copy">
             <div class="hero-id">
-              <p class="hero-name">SHAIK SAMEER <span class="hero-alias">SAM · SAMEER</span></p>
+              <p class="hero-name">Shaik Sameer <span class="hero-alias">SAM · SAMEER</span></p>
               <p class="mono-label">Software Developer · AI/ML Engineer · India</p>
               <p class="availability"><span class="dot" aria-hidden="true"></span>Open to full-time roles</p>
             </div>
 
-            <h1 id="introTitle" class="hero-title">Hi, I'm Shaik Sameer.</h1>
-            <p class="hero-role-line">Software Developer <span aria-hidden="true">|</span> AI/ML Engineer <span aria-hidden="true">|</span> Technology Enthusiast</p>
-            <p class="hero-lead">I’m Sameer — a software developer focused on practical automation, backend systems, and machine learning. I build tools that make complex work clearer and more useful.</p>
+            <h1 id="introTitle" class="hero-title">I build AI systems that take repetitive work off people’s desks.</h1>
+            <p class="hero-lead">I’m automating e-publication and HRMS workflows at Agile CAS. Before that: geospatial carbon estimation, clinical risk models and database AI agents.</p>
 
             <div class="hero-actions">
-              <a href="#about" class="button button-secondary">About me</a>
-              <a href="#work" class="button button-primary">View projects</a>
-              <a href="#contact" class="button button-text">Contact</a>
+              <a href="#work" class="button button-primary">View my work</a>
+              <a href="#resume" class="button button-secondary">Request résumé</a>
+              <a href="mailto:shaiksameershubhan71@gmail.com" class="mono-link">shaiksameershubhan71@gmail.com</a>
             </div>
-            <ul class="hero-social" aria-label="Social profiles">
-              <li><a href="https://www.linkedin.com/in/shaik-sameer-shubhan-2598563a0" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li>
-              <li><a href="https://github.com/ShaikSameerShubhan0089" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></li>
-            </ul>
 
             <ul class="facts" aria-label="At a glance">
               <li><span class="fact-key">Now</span><span class="fact-value">IT Executive, Agile CAS</span></li>
@@ -129,13 +115,13 @@
               <div class="photo-stack" data-photo-stack>
                 <div class="photo-stack-inner">
                   <div class="photo-card" data-pos="0" data-caption="Portrait">
-                    <img src="{{ url_for('static', filename='images/shaik-sameer-profile.webp') }}" alt="Shaik Sameer, also known as Sam, smiling in a seated portrait" width="460" height="460" fetchpriority="high" decoding="async">
+                    <img src="{{ url_for('static', filename='images/sameer-profile.webp') }}" alt="Shaik Sameer smiling, seated, in a floral shirt" width="460" height="460" fetchpriority="high">
                   </div>
                   <div class="photo-card" data-pos="1" data-caption="On stage">
-                    <img src="{{ url_for('static', filename='images/shaik-sameer-college-event.webp') }}" alt="Shaik Sameer speaking into a microphone at a college event" width="640" height="792" loading="lazy" decoding="async">
+                    <img src="{{ url_for('static', filename='images/sameer-portrait.webp') }}" alt="Shaik Sameer speaking into a microphone at a college event" width="640" height="792" loading="lazy">
                   </div>
                   <div class="photo-card" data-pos="2" data-caption="Candid">
-                    <img src="{{ url_for('static', filename='images/shaik-sameer-casual-portrait.webp') }}" alt="Shaik Sameer smiling in a casual portrait" width="720" height="645" loading="lazy" decoding="async">
+                    <img src="{{ url_for('static', filename='images/sameer-about.webp') }}" alt="Shaik Sameer smiling, seated at a table in a red shirt" width="720" height="645" loading="lazy">
                   </div>
                 </div>
               </div>
@@ -149,45 +135,6 @@
         </div>
       </div>
       <a class="scroll-cue" href="#work"><span>Scroll to explore</span><span class="scroll-cue-arrow" aria-hidden="true">↓</span></a>
-    </section>
-
-    <section class="brand-section about-section" id="about" aria-labelledby="aboutTitle">
-      <div class="brand-wrap">
-        <header class="brand-heading">
-          <p class="brand-kicker">01 / About</p>
-          <h2 id="aboutTitle">A builder at the intersection of <em>software and intelligence.</em></h2>
-        </header>
-        <div class="about-grid">
-          <div class="about-copy">
-            <p>I'm Shaik Sameer — also known as Sameer, Sam, or Laddu. Laddu is also the name of the AI assistant on this site. I work across software development and AI/ML, turning real problems into practical, understandable tools.</p>
-            <p>My work ranges from backend services and workflow automation to machine-learning prototypes. I care about building responsibly, explaining technical choices clearly, and making systems useful to the people who rely on them.</p>
-            <a class="brand-text-link" href="#experience">A little more about my path <span aria-hidden="true">↘</span></a>
-          </div>
-          <aside class="about-note" aria-label="Professional focus">
-            <span class="about-note-mark" aria-hidden="true">S.</span>
-            <p class="brand-kicker">CURRENT FOCUS</p>
-            <p>Automation · Backend engineering · Applied machine learning</p>
-            <span class="about-note-rule" aria-hidden="true"></span>
-            <p class="about-note-small">Based in Andhra Pradesh, India</p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="brand-section skills-section" id="skills" aria-labelledby="skillsTitle">
-      <div class="brand-wrap">
-        <header class="brand-heading brand-heading-row">
-          <div><p class="brand-kicker">02 / Technical skills</p><h2 id="skillsTitle">Tools I use to <em>make things work.</em></h2></div>
-          <p class="brand-heading-aside">A practical toolkit built through projects, work, and continued learning.</p>
-        </header>
-        <div class="skills-list">
-          <article class="skill-row"><span class="skill-index">01</span><h3>Languages</h3><p>Python · JavaScript · SQL</p></article>
-          <article class="skill-row"><span class="skill-index">02</span><h3>Application development</h3><p>Flask · FastAPI · Streamlit · HTML · CSS</p></article>
-          <article class="skill-row"><span class="skill-index">03</span><h3>Machine learning &amp; data</h3><p>scikit-learn · XGBoost · SHAP · OpenCV · Pandas · NumPy</p></article>
-          <article class="skill-row"><span class="skill-index">04</span><h3>Data stores</h3><p>PostgreSQL · MySQL · MariaDB · MongoDB</p></article>
-          <article class="skill-row"><span class="skill-index">05</span><h3>Tools &amp; visualization</h3><p>Git · Power BI · Tableau</p></article>
-        </div>
-      </div>
     </section>
 
     <!-- 02 Work ------------------------------------------------------- -->
@@ -469,90 +416,47 @@
                 </ul>
               </div>
             </li>
+            <li class="timeline-row" data-marker="3">
+              <p class="timeline-date">2022 – 2026</p>
+              <div>
+                <h3 class="timeline-role">B.Tech, AI &amp; Data Science <span class="timeline-org">Aditya College of Engineering, Madanapalle</span></h3>
+                <p class="timeline-text">Department President, R&amp;D Cell Coordinator, co-hosted ICCISET 2025. Before that: Intermediate (MPC), Vidyanikethan Junior College, 2020–2022.</p>
+              </div>
+            </li>
           </ol>
+
+          <h3 class="sub-title">Toolkit</h3>
+          <dl class="toolkit">
+            <div><dt>Languages</dt><dd><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">SQL</span></dd></div>
+            <div><dt>Backend</dt><dd><span class="chip">Flask</span><span class="chip">FastAPI</span></dd></div>
+            <div><dt>ML &amp; data</dt><dd><span class="chip">scikit-learn</span><span class="chip">XGBoost</span><span class="chip">SHAP</span><span class="chip">OpenCV</span><span class="chip">Pandas</span></dd></div>
+            <div><dt>Data stores</dt><dd><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">MariaDB</span><span class="chip">MongoDB</span></dd></div>
+            <div><dt>Tools</dt><dd><span class="chip">Git</span><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Streamlit</span></dd></div>
+          </dl>
+
+          <h3 class="sub-title">Certificates</h3>
+          <ul class="cert-list">
+            <li><a href="{{ url_for('static', filename='certificates/techsaksham-ai-internship.pdf') }}" target="_blank" rel="noopener"><span class="cert-title">AI Internship</span><span class="cert-meta">TechSaksham · Edunet, Microsoft &amp; SAP</span><span class="cert-cta">PDF ↗</span></a></li>
+            <li><a href="{{ url_for('static', filename='certificates/skilldzire-data-science-internship.pdf') }}" target="_blank" rel="noopener"><span class="cert-title">Data Science Internship</span><span class="cert-meta">SkillDzire · 2025</span><span class="cert-cta">PDF ↗</span></a></li>
+            <li><a href="{{ url_for('static', filename='certificates/skillbit-ai-internship.pdf') }}" target="_blank" rel="noopener"><span class="cert-title">AI Internship</span><span class="cert-meta">Skillbit · 2025</span><span class="cert-cta">PDF ↗</span></a></li>
+            <li><a href="{{ url_for('static', filename='certificates/smartbridge-data-analytics-internship.pdf') }}" target="_blank" rel="noopener"><span class="cert-title">Data Analytics with Tableau</span><span class="cert-meta">APSCHE × SmartBridge · 2025</span><span class="cert-cta">PDF ↗</span></a></li>
+            <li><a href="{{ url_for('static', filename='certificates/ibm-getting-started-with-data.pdf') }}" target="_blank" rel="noopener"><span class="cert-title">Getting Started with Data</span><span class="cert-meta">IBM SkillsBuild · 2025</span><span class="cert-cta">PDF ↗</span></a></li>
+            <li><a href="{{ url_for('static', filename='certificates/aditya-cloud-computing-linux.pdf') }}" target="_blank" rel="noopener"><span class="cert-title">Cloud Computing &amp; Linux</span><span class="cert-meta">Aditya College · 2024</span><span class="cert-cta">PDF ↗</span></a></li>
+            <li><a href="{{ url_for('static', filename='certificates/letsupgrade-student-ambassador.pdf') }}" target="_blank" rel="noopener"><span class="cert-title">Student Ambassador, Silver</span><span class="cert-meta">LetsUpgrade</span><span class="cert-cta">PDF ↗</span></a></li>
+          </ul>
         </div>
-      </div>
-    </section>
-
-    <section class="brand-section education-section" id="education" aria-labelledby="educationTitle">
-      <div class="brand-wrap">
-        <header class="brand-heading"><p class="brand-kicker">04 / Education</p><h2 id="educationTitle">Learning that shapes <em>the work.</em></h2></header>
-        <div class="education-grid">
-          <article><span class="education-years">2022 — 2026</span><h3>B.Tech, Artificial Intelligence &amp; Data Science</h3><p>Aditya College of Engineering · Madanapalle</p></article>
-          <article><span class="education-years">2020 — 2022</span><h3>Intermediate · Mathematics, Physics &amp; Chemistry</h3><p>Vidyanikethan Junior College · Madanapalle</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="brand-section certifications-section" id="certifications" aria-labelledby="certificationsTitle">
-      <div class="brand-wrap">
-        <header class="brand-heading brand-heading-row"><div><p class="brand-kicker">05 / Certifications</p><h2 id="certificationsTitle">Learning, put into <em>practice.</em></h2></div><p class="brand-heading-aside">Selected certificates and internship records.</p></header>
-        <ul class="brand-cert-list">
-          <li><a href="{{ url_for('static', filename='certificates/techsaksham-ai-internship.pdf') }}" target="_blank" rel="noopener"><span>AI Internship · TechSaksham / Edunet</span><span>2024–25 ↗</span></a></li>
-          <li><a href="{{ url_for('static', filename='certificates/skilldzire-data-science-internship.pdf') }}" target="_blank" rel="noopener"><span>Data Science Internship · SkillDzire</span><span>2025 ↗</span></a></li>
-          <li><a href="{{ url_for('static', filename='certificates/skillbit-ai-internship.pdf') }}" target="_blank" rel="noopener"><span>Artificial Intelligence Internship · Skillbit</span><span>2025 ↗</span></a></li>
-          <li><a href="{{ url_for('static', filename='certificates/smartbridge-data-analytics-internship.pdf') }}" target="_blank" rel="noopener"><span>Data Analytics with Tableau · APSCHE × SmartBridge</span><span>2025 ↗</span></a></li>
-          <li><a href="{{ url_for('static', filename='certificates/ibm-getting-started-with-data.pdf') }}" target="_blank" rel="noopener"><span>Getting Started with Data · IBM SkillsBuild</span><span>2025 ↗</span></a></li>
-          <li><a href="{{ url_for('static', filename='certificates/aditya-cloud-computing-linux.pdf') }}" target="_blank" rel="noopener"><span>Cloud Computing &amp; Linux · Aditya College</span><span>2024 ↗</span></a></li>
-          <li><a href="{{ url_for('static', filename='certificates/letsupgrade-student-ambassador.pdf') }}" target="_blank" rel="noopener"><span>Student Ambassador, Silver · LetsUpgrade</span><span>↗</span></a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="brand-section achievements-section" id="achievements" aria-labelledby="achievementsTitle">
-      <div class="brand-wrap achievements-wrap">
-        <div><p class="brand-kicker">06 / Achievements</p><h2 id="achievementsTitle">Contributing beyond <em>the code.</em></h2></div>
-        <ul class="achievement-list">
-          <li><span>01</span><div><h3>Department President, AI &amp; DS</h3><p>Aditya College of Engineering</p></div></li>
-          <li><span>02</span><div><h3>R&amp;D Cell Coordinator</h3><p>Aditya College of Engineering</p></div></li>
-          <li><span>03</span><div><h3>Co-host, ICCISET 2025</h3><p>Academic conference contribution</p></div></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="brand-section gallery-section" id="gallery" aria-labelledby="galleryTitle">
-      <div class="brand-wrap">
-        <header class="brand-heading brand-heading-row"><div><p class="brand-kicker">07 / My gallery</p><h2 id="galleryTitle">A few moments <em>along the way.</em></h2></div><p class="brand-heading-aside">Genuine photographs of Shaik Sameer, also known as Sam and Sameer.</p></header>
-        <div class="brand-gallery">
-          <button class="gallery-item gallery-item-large" type="button" data-gallery-image="0" aria-label="View portrait of Shaik Sameer">
-            <img src="{{ url_for('static', filename='images/shaik-sameer-profile.webp') }}" alt="Shaik Sameer, also known as Sam, smiling in a seated portrait" width="460" height="460" loading="lazy" decoding="async"><span>01 / Portrait</span>
-          </button>
-          <button class="gallery-item gallery-item-tall" type="button" data-gallery-image="1" aria-label="View Shaik Sameer speaking at a college event">
-            <img src="{{ url_for('static', filename='images/shaik-sameer-college-event.webp') }}" alt="Shaik Sameer speaking into a microphone at a college event" width="640" height="792" loading="lazy" decoding="async"><span>02 / On stage</span>
-          </button>
-          <button class="gallery-item" type="button" data-gallery-image="2" aria-label="View casual portrait of Shaik Sameer">
-            <img src="{{ url_for('static', filename='images/shaik-sameer-casual-portrait.webp') }}" alt="Shaik Sameer smiling in a casual seated portrait" width="720" height="645" loading="lazy" decoding="async"><span>03 / Candid</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <dialog class="gallery-lightbox" id="galleryLightbox" aria-label="Photo viewer">
-      <div class="lightbox-bar"><p id="galleryCaption">Photo</p><button type="button" id="galleryClose" aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button></div>
-      <img id="galleryImage" src="" alt="">
-      <div class="lightbox-controls" aria-label="Photo navigation">
-        <button type="button" id="galleryPrev" aria-label="View previous photo">← <span>Previous</span></button>
-        <p id="galleryHint">Use the arrow keys or controls to browse · <span id="galleryCount">1 of 3</span></p>
-        <button type="button" id="galleryNext" aria-label="View next photo"><span>Next</span> →</button>
-      </div>
-    </dialog>
-
-    <section class="brand-section blog-section" id="blog" aria-labelledby="blogTitle">
-      <div class="brand-wrap blog-wrap">
-        <div><p class="brand-kicker">08 / Blog &amp; articles</p><h2 id="blogTitle">Notes from the <em>workbench.</em></h2></div>
-        <div class="blog-empty"><span class="blog-empty-mark" aria-hidden="true">✳</span><div><h3>Articles are in progress.</h3><p>When Sameer publishes a piece, it will appear here. No placeholder posts or fabricated bylines.</p></div></div>
       </div>
     </section>
 
     <!-- 04 Lab -------------------------------------------------------- -->
-    <section class="chapter" id="lab" data-chapter="lab" data-chapter-index="09" data-chapter-name="Experiments" aria-labelledby="labTitle">
+    <section class="chapter" id="lab" data-chapter="lab" data-chapter-index="04" data-chapter-name="Lab" aria-labelledby="labTitle">
       <div class="container stage side-left" data-station="lab">
         <div class="stage-3d" data-stage aria-hidden="true"></div>
         <div class="panel panel-wide reveal">
           <header class="chapter-head in-panel">
-            <p class="mono-label"><span class="accent-text">09</span> — Experiments</p>
-            <h2 id="labTitle" class="chapter-title">Laddu, plus a few things to play with.</h2>
-            <p class="chapter-lead">Ask my AI assistant about my work, then explore eight small games built for the browser.</p>
+            <p class="mono-label"><span class="accent-text">04</span> — Lab</p>
+            <h2 id="labTitle" class="chapter-title">Try things out</h2>
+            <p class="chapter-lead">Ask my AI assistant a question, or play one of eight small games I built.</p>
           </header>
 
           <div class="lab-chat" id="chat">
@@ -590,7 +494,6 @@
                 <input id="userInput" type="text" maxlength="500" autocomplete="off" placeholder="Ask about projects, skills…">
                 <button type="submit" id="sendButton" class="button button-primary">Send</button>
               </form>
-              <p class="chat-privacy-note">Your message is sent to the AI assistant. When server analytics are configured, portfolio questions and replies may also be stored; please avoid sharing sensitive information.</p>
             </div>
           </div>
 
@@ -690,16 +593,11 @@
 
   <footer class="site-footer">
     <div class="container footer-bar">
-      <p class="footer-name">Shaik Sameer <span>Sam · Sameer</span></p>
-      <p class="footer-meta">© <span data-year>2026</span> · Software Developer · AI/ML Engineer</p>
+      <p class="footer-name">Shaik Sameer</p>
+      <p class="footer-meta">© <span data-year>2026</span> · Writing: <a class="text-link" href="https://www.instagram.com/s.m.r_writings" target="_blank" rel="noopener noreferrer">@s.m.r_writings</a></p>
       <a href="#top" class="text-link">Back to top ↑</a>
     </div>
   </footer>
-
-  <aside class="analytics-consent" id="analyticsConsent" aria-label="Optional analytics settings" hidden>
-    <div><strong>Help improve this site?</strong><p>Optional, privacy-conscious analytics are off unless you choose to allow them. You can decline and still use the full site.</p></div>
-    <div class="analytics-consent-actions"><button class="button button-secondary" type="button" id="analyticsDecline">Decline</button><button class="button button-primary" type="button" id="analyticsAccept">Allow analytics</button></div>
-  </aside>
 
   <div class="game-modal" id="gameModal" role="dialog" aria-modal="true" aria-labelledby="gameModalTitle" hidden>
     <div class="game-modal-backdrop" data-close-game="true"></div>
@@ -749,6 +647,5 @@
   <script src="app.js"></script>
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/gallery.js') }}" defer></script>
 </body>
 </html>
