@@ -47,6 +47,9 @@
   <link rel="stylesheet" href="/static/css/style.css">
   <script src="/static/js/theme.js" defer></script>
   <link rel="stylesheet" href="/static/css/brand.css">
+  <script type="importmap">
+    {"imports":{"three":"/static/vendor/three/three.module.min.js"}}
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -60,6 +63,7 @@
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scene" id="scene" data-module="/static/js/scene.js" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="header-bar">

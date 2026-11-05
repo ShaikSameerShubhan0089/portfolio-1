@@ -33,7 +33,6 @@
 }
 html { background: var(--bg); scroll-padding-top: 90px; }
 body { background: var(--bg); color: var(--text); font-size: 16px; }
-.scene, .chapter-rail, .stage-3d, .progress-bar { display: none !important; }
 .site-header { position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 93%, transparent); border-bottom: 1px solid var(--line); box-shadow: none; backdrop-filter: blur(14px); z-index: 50; }
 .header-bar { width: min(1440px, 100%); min-height: 76px; padding-inline: var(--gutter); margin: auto; display: flex; gap: 24px; }
 .wordmark { gap: 11px; font-weight: 700; letter-spacing: -.04em; }
