@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RISE — Autism Risk Detection | Shaik Sameer</title>
+  <meta name="description" content="An explainable risk-identification system designed to support early-childhood programmes. Project problem, implementation, technology stack, and links by Shaik Sameer.">
+  <meta name="author" content="Shaik Sameer">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://shaiksameershubhan.netlify.app/projects/rise-autism-risk-detection/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Shaik Sameer Portfolio">
+  <meta property="og:title" content="RISE — Autism Risk Detection | Shaik Sameer">
+  <meta property="og:description" content="An explainable risk-identification system designed to support early-childhood programmes.">
+  <meta property="og:url" content="https://shaiksameershubhan.netlify.app/projects/rise-autism-risk-detection/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="RISE — Autism Risk Detection | Shaik Sameer">
+  <meta name="twitter:description" content="An explainable risk-identification system designed to support early-childhood programmes.">
+  <link rel="icon" href="/static/images/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/project-pages.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "creator": {"@type": "Person", "name": "Shaik Sameer", "url": "https://shaiksameershubhan.netlify.app/about/"}, "description": "An explainable risk-identification system designed to support early-childhood programmes.", "name": "RISE \u2014 Autism Risk Detection", "sameAs": ["https://rise-sxih.onrender.com/", "https://github.com/ShaikSameerShubhan0089/RISE"], "url": "https://shaiksameershubhan.netlify.app/projects/rise-autism-risk-detection/"}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="project-site-header">
+    <a class="wordmark" href="/" aria-label="Shaik Sameer homepage">Shaik Sameer</a>
+    <nav aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">/</span><a href="/#work">Projects</a>
+    </nav>
+  </header>
+  <main id="main" class="project-page container">
+    <p class="mono-label project-eyebrow">Healthcare machine learning · Phase 1 complete</p>
+    <h1>RISE — Autism Risk Detection</h1>
+    <p class="project-summary">An explainable risk-identification system designed to support early-childhood programmes.</p>
+
+    <div class="project-page-grid">
+      <article class="project-page-copy">
+        <section aria-labelledby="problemTitle">
+          <p class="mono-label">01 · The problem</p>
+          <h2 id="problemTitle">What this project addresses</h2>
+          <p>Early-childhood development programmes need to identify children who may benefit from further assessment using structured field assessments. The system is intended to support clinicians, not replace diagnosis.</p>
+        </section>
+        <section aria-labelledby="implementationTitle">
+          <p class="mono-label">02 · Implementation</p>
+          <h2 id="implementationTitle">How it works</h2>
+          <p>A 12-table PostgreSQL schema supports location hierarchies, longitudinal child records, referrals, and audit logs. Four clinical indices (SCII, NSI, ERM, DBS) feed a calibrated XGBoost risk classifier and an escalation predictor. SHAP provides the five leading factors behind each score.</p>
+        </section>
+        <section aria-labelledby="resultTitle">
+          <p class="mono-label">03 · Outcome</p>
+          <h2 id="resultTitle">What it does</h2>
+          <p>On a synthetic cohort of 1,000 children, the risk classifier met ROC-AUC &gt; 0.88 and sensitivity &gt; 0.85 targets; the escalation predictor met an ROC-AUC &gt; 0.82 target. Scores map to four risk tiers with suggested actions. Phase 1, covering data and models, is complete. This is decision support, not a diagnostic tool.</p>
+        </section>
+      </article>
+      <aside class="project-page-aside" aria-label="Project details">
+        <section>
+          <h2>Technologies</h2>
+          <ul class="project-tech-list">
+            <li>Python</li><li>XGBoost</li><li>SHAP</li><li>PostgreSQL</li>
+          </ul>
+        </section>
+        <section class="project-resource-links" aria-label="Project links">
+          <a class="button button-primary" href="https://rise-sxih.onrender.com/" target="_blank" rel="noopener noreferrer">Open live demo <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="https://github.com/ShaikSameerShubhan0089/RISE" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+        </section>
+      </aside>
+    </div>
+    <nav class="project-page-backlinks" aria-label="More about Shaik Sameer">
+      <a href="/about/">About Shaik Sameer</a>
+      <a href="/#work">More projects</a>
+      <a href="/">Portfolio homepage</a>
+    </nav>
+  </main>
+  <footer class="project-page-footer"><a href="/">Shaik Sameer</a><span>Software Developer · AI/ML Engineer</span></footer>
+</body>
+</html>

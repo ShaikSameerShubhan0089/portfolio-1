@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ project.title }} | Shaik Sameer</title>
+  <meta name="description" content="{{ project.summary }} Project problem, implementation, technology stack, and links by Shaik Sameer.">
+  <meta name="author" content="Shaik Sameer">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="{{ site_url }}/projects/{{ project.slug }}/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Shaik Sameer Portfolio">
+  <meta property="og:title" content="{{ project.title }} | Shaik Sameer">
+  <meta property="og:description" content="{{ project.summary }}">
+  <meta property="og:url" content="{{ site_url }}/projects/{{ project.slug }}/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ project.title }} | Shaik Sameer">
+  <meta name="twitter:description" content="{{ project.summary }}">
+  <link rel="icon" href="/static/images/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/project-pages.css">
+  <script type="application/ld+json">{{ {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": project.title,
+    "description": project.summary,
+    "url": site_url ~ "/projects/" ~ project.slug ~ "/",
+    "creator": {"@type": "Person", "name": "Shaik Sameer", "url": site_url ~ "/about/"},
+    "sameAs": ([project.demo_url] if project.demo_url else []) + ([project.repository_url] if project.repository_url else [])
+  } | tojson }}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="project-site-header">
+    <a class="wordmark" href="/" aria-label="Shaik Sameer homepage">Shaik Sameer</a>
+    <nav aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">/</span><a href="/#work">Projects</a>
+    </nav>
+  </header>
+  <main id="main" class="project-page container">
+    <p class="mono-label project-eyebrow">{{ project.category }} · {{ project.status }}</p>
+    <h1>{{ project.title }}</h1>
+    <p class="project-summary">{{ project.summary }}</p>
+
+    <div class="project-page-grid">
+      <article class="project-page-copy">
+        <section aria-labelledby="problemTitle">
+          <p class="mono-label">01 · The problem</p>
+          <h2 id="problemTitle">What this project addresses</h2>
+          <p>{{ project.problem }}</p>
+        </section>
+        <section aria-labelledby="implementationTitle">
+          <p class="mono-label">02 · Implementation</p>
+          <h2 id="implementationTitle">How it works</h2>
+          <p>{{ project.implementation }}</p>
+        </section>
+        <section aria-labelledby="resultTitle">
+          <p class="mono-label">03 · Outcome</p>
+          <h2 id="resultTitle">What it does</h2>
+          <p>{{ project.result }}</p>
+        </section>
+      </article>
+      <aside class="project-page-aside" aria-label="Project details">
+        <section>
+          <h2>Technologies</h2>
+          <ul class="project-tech-list">
+            {% for technology in project.technologies %}<li>{{ technology }}</li>{% endfor %}
+          </ul>
+        </section>
+        <section class="project-resource-links" aria-label="Project links">
+          {% if project.demo_url %}<a class="button button-primary" href="{{ project.demo_url }}" target="_blank" rel="noopener noreferrer">Open live demo <span aria-hidden="true">↗</span></a>{% endif %}
+          {% if project.repository_url %}<a class="button button-secondary" href="{{ project.repository_url }}" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>{% endif %}
+        </section>
+      </aside>
+    </div>
+    <nav class="project-page-backlinks" aria-label="More about Shaik Sameer">
+      <a href="/about/">About Shaik Sameer</a>
+      <a href="/#work">More projects</a>
+      <a href="/">Portfolio homepage</a>
+    </nav>
+  </main>
+  <footer class="project-page-footer"><a href="/">Shaik Sameer</a><span>Software Developer · AI/ML Engineer</span></footer>
+</body>
+</html>

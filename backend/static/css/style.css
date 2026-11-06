@@ -3253,6 +3253,7 @@ main {
 }
 .photo-thumbnail:hover { transform: translateY(-2px); }
 .photo-thumbnail:focus-visible { outline: 2px solid var(--hl); outline-offset: 2px; }
+.project-detail-link { margin-top: 12px; }
 @media (prefers-reduced-motion: reduce) {
   .photo-thumbnail { transition: none; }
 }

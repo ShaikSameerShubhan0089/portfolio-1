@@ -5,6 +5,7 @@ from xml.sax.saxutils import escape
 import argparse
 
 from myapp import SITE_URL, app
+from project_pages import ABOUT, PROJECTS
 
 
 def main():
@@ -38,6 +39,15 @@ def main():
         html = app.jinja_env.get_template("index.html").render(site_url=SITE_URL, backend_mode=False)
     html = "\n".join(line.rstrip() for line in html.splitlines()) + "\n"
     output.write_text(html, encoding="utf-8")
+    with app.test_request_context("/", base_url="http://localhost:5500"):
+        about_html = app.jinja_env.get_template("about.html").render(site_url=SITE_URL, about=ABOUT)
+        (project_root / "frontend" / "about" ).mkdir(parents=True, exist_ok=True)
+        (project_root / "frontend" / "about" / "index.html").write_text(about_html, encoding="utf-8")
+        for project in PROJECTS:
+            project_dir = project_root / "frontend" / "projects" / project["slug"]
+            project_dir.mkdir(parents=True, exist_ok=True)
+            page = app.jinja_env.get_template("project_detail.html").render(site_url=SITE_URL, project=project)
+            (project_dir / "index.html").write_text(page, encoding="utf-8")
     site = escape(SITE_URL.rstrip("/"))
     gallery_images = [
         ('sameer-profile.webp', 'Shaik Sameer profile portrait', 'Shaik Sameer smiling in a floral shirt'),
@@ -71,6 +81,8 @@ def main():
     <changefreq>monthly</changefreq>
 {image_entries}
   </url>
+  <url><loc>{site}/about/</loc></url>
+{''.join(f'  <url><loc>{site}/projects/{escape(project["slug"])}/</loc></url>\n' for project in PROJECTS)}
 </urlset>
 '''
     (output.parent / "sitemap.xml").write_text(sitemap, encoding="utf-8")
@@ -78,7 +90,7 @@ def main():
         f"User-agent: *\nAllow: /\nDisallow: /admin/\nSitemap: {site}/sitemap.xml\n",
         encoding="utf-8",
     )
-    print(f"Built {output}, sitemap.xml, and robots.txt for {SITE_URL}")
+    print(f"Built homepage, {len(PROJECTS)} project pages, about page, sitemap.xml, and robots.txt for {SITE_URL}")
 
 
 if __name__ == "__main__":
