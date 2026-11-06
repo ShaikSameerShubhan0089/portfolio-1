@@ -17,6 +17,7 @@ from urllib.parse import quote
 import requests
 from dotenv import load_dotenv
 from flask import Flask, jsonify, redirect, render_template, request, send_from_directory, url_for
+from project_pages import ABOUT, PROJECTS_BY_SLUG
 from itsdangerous import BadSignature, SignatureExpired, URLSafeTimedSerializer
 from werkzeug.middleware.proxy_fix import ProxyFix
 
@@ -346,6 +347,19 @@ def send_email(
 @app.route("/")
 def index():
     return render_template("index.html", site_url=SITE_URL, backend_mode=True)
+
+
+@app.route("/about/")
+def about_page():
+    return render_template("about.html", site_url=SITE_URL, about=ABOUT)
+
+
+@app.route("/projects/<slug>/")
+def project_page(slug):
+    project = PROJECTS_BY_SLUG.get(slug)
+    if project is None:
+        return "Project not found", 404
+    return render_template("project_detail.html", site_url=SITE_URL, project=project)
 
 
 @app.route("/health")

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shaik Sameer Portfolio | Shaik Sameer</title>
+  <meta name="description" content="A personal portfolio with a gated résumé request flow and the Laddu AI assistant. Project problem, implementation, technology stack, and links by Shaik Sameer.">
+  <meta name="author" content="Shaik Sameer">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://shaiksameershubhan.netlify.app/projects/shaik-sameer-portfolio/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Shaik Sameer Portfolio">
+  <meta property="og:title" content="Shaik Sameer Portfolio | Shaik Sameer">
+  <meta property="og:description" content="A personal portfolio with a gated résumé request flow and the Laddu AI assistant.">
+  <meta property="og:url" content="https://shaiksameershubhan.netlify.app/projects/shaik-sameer-portfolio/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Shaik Sameer Portfolio | Shaik Sameer">
+  <meta name="twitter:description" content="A personal portfolio with a gated résumé request flow and the Laddu AI assistant.">
+  <link rel="icon" href="/static/images/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/project-pages.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "creator": {"@type": "Person", "name": "Shaik Sameer", "url": "https://shaiksameershubhan.netlify.app/about/"}, "description": "A personal portfolio with a gated r\u00e9sum\u00e9 request flow and the Laddu AI assistant.", "name": "Shaik Sameer Portfolio", "sameAs": ["https://shaiksameershubhan.netlify.app/", "https://github.com/Smr2005/SAMEER_Porfolio"], "url": "https://shaiksameershubhan.netlify.app/projects/shaik-sameer-portfolio/"}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="project-site-header">
+    <a class="wordmark" href="/" aria-label="Shaik Sameer homepage">Shaik Sameer</a>
+    <nav aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">/</span><a href="/#work">Projects</a>
+    </nav>
+  </header>
+  <main id="main" class="project-page container">
+    <p class="mono-label project-eyebrow">Personal product engineering · Live</p>
+    <h1>Shaik Sameer Portfolio</h1>
+    <p class="project-summary">A personal portfolio with a gated résumé request flow and the Laddu AI assistant.</p>
+
+    <div class="project-page-grid">
+      <article class="project-page-copy">
+        <section aria-labelledby="problemTitle">
+          <p class="mono-label">01 · The problem</p>
+          <h2 id="problemTitle">What this project addresses</h2>
+          <p>The site needed a résumé request process that lets Sameer approve delivery, plus a way for visitors to ask follow-up questions about his work.</p>
+        </section>
+        <section aria-labelledby="implementationTitle">
+          <p class="mono-label">02 · Implementation</p>
+          <h2 id="implementationTitle">How it works</h2>
+          <p>Résumé requests produce a signed, expiring approval link, followed by a confirmation step to prevent email link scanners from triggering delivery. Email uses Brevo with a Gmail SMTP fallback. Laddu answers from a curated fact sheet, has short conversation memory, and supports voice input and spoken replies. Both API endpoints are rate-limited.</p>
+        </section>
+        <section aria-labelledby="resultTitle">
+          <p class="mono-label">03 · Outcome</p>
+          <h2 id="resultTitle">What it does</h2>
+          <p>Résumé delivery requires approval, and visitors can ask typed or spoken questions about the portfolio. The Flask backend and static frontend are deployed separately.</p>
+        </section>
+      </article>
+      <aside class="project-page-aside" aria-label="Project details">
+        <section>
+          <h2>Technologies</h2>
+          <ul class="project-tech-list">
+            <li>Python</li><li>Flask</li><li>Groq</li><li>Web Speech API</li><li>pytest</li><li>Netlify</li><li>Render</li>
+          </ul>
+        </section>
+        <section class="project-resource-links" aria-label="Project links">
+          <a class="button button-primary" href="https://shaiksameershubhan.netlify.app/" target="_blank" rel="noopener noreferrer">Open live demo <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="https://github.com/Smr2005/SAMEER_Porfolio" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>
+        </section>
+      </aside>
+    </div>
+    <nav class="project-page-backlinks" aria-label="More about Shaik Sameer">
+      <a href="/about/">About Shaik Sameer</a>
+      <a href="/#work">More projects</a>
+      <a href="/">Portfolio homepage</a>
+    </nav>
+  </main>
+  <footer class="project-page-footer"><a href="/">Shaik Sameer</a><span>Software Developer · AI/ML Engineer</span></footer>
+</body>
+</html>

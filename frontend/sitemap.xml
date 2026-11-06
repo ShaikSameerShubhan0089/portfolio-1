@@ -19,4 +19,15 @@
     <image:image><image:loc>https://shaiksameershubhan.netlify.app/static/images/shaik-sameer-light-blazer-portrait-edited.jpg</image:loc><image:title>Shaik Sameer wearing a light blazer outdoors</image:title><image:caption>Portrait · Light blazer</image:caption></image:image>
     <image:image><image:loc>https://shaiksameershubhan.netlify.app/static/images/shaik-sameer-blue-shirt-portrait-edited.jpg</image:loc><image:title>Shaik Sameer standing beside a doorway in a blue shirt</image:title><image:caption>Portrait · Blue shirt</image:caption></image:image>
   </url>
+  <url><loc>https://shaiksameershubhan.netlify.app/about/</loc></url>
+  <url><loc>https://shaiksameershubhan.netlify.app/projects/carbonsphere-ai/</loc></url>
+  <url><loc>https://shaiksameershubhan.netlify.app/projects/rise-autism-risk-detection/</loc></url>
+  <url><loc>https://shaiksameershubhan.netlify.app/projects/queryvault-ai/</loc></url>
+  <url><loc>https://shaiksameershubhan.netlify.app/projects/portfolio-generator/</loc></url>
+  <url><loc>https://shaiksameershubhan.netlify.app/projects/shaik-sameer-portfolio/</loc></url>
+  <url><loc>https://shaiksameershubhan.netlify.app/projects/multiple-disease-prediction/</loc></url>
+  <url><loc>https://shaiksameershubhan.netlify.app/projects/movie-recommender-system/</loc></url>
+  <url><loc>https://shaiksameershubhan.netlify.app/projects/car-pulse-autofeel/</loc></url>
+  <url><loc>https://shaiksameershubhan.netlify.app/projects/facial-recognition-system/</loc></url>
+
 </urlset>

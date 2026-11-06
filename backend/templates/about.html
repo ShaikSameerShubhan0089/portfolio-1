@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Shaik Sameer | Software Developer &amp; AI/ML Engineer</title>
+  <meta name="description" content="{{ about.description }}">
+  <meta name="author" content="Shaik Sameer">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="{{ site_url }}/about/">
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Shaik Sameer Portfolio">
+  <meta property="og:title" content="About Shaik Sameer | Software Developer &amp; AI/ML Engineer">
+  <meta property="og:description" content="{{ about.description }}">
+  <meta property="og:url" content="{{ site_url }}/about/">
+  <meta property="og:image" content="{{ site_url }}/static/images/shaik-sameer-profile.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Shaik Sameer">
+  <meta name="twitter:description" content="{{ about.description }}">
+  <meta name="twitter:image" content="{{ site_url }}/static/images/shaik-sameer-profile.webp">
+  <link rel="icon" href="/static/images/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/project-pages.css">
+  <script type="application/ld+json">{{ {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "name": about.title,
+    "description": about.description,
+    "url": site_url ~ "/about/",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Shaik Sameer",
+      "alternateName": ["Sameer", "Sam"],
+      "jobTitle": "Software Developer",
+      "description": "Software Developer and AI/ML Engineer",
+      "url": site_url ~ "/about/",
+      "image": site_url ~ "/static/images/shaik-sameer-profile.webp",
+      "sameAs": ["https://www.linkedin.com/in/shaik-sameer-shubhan-2598563a0", "https://github.com/ShaikSameerShubhan0089"]
+    }
+  } | tojson }}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="project-site-header">
+    <a class="wordmark" href="/" aria-label="Shaik Sameer homepage">Shaik Sameer</a>
+    <nav aria-label="Main"><a href="/#work">Projects</a><a href="/#experience">Experience</a><a href="/">Homepage</a></nav>
+  </header>
+  <main id="main" class="project-page about-page container">
+    <p class="mono-label project-eyebrow">{{ about.alternate_names }}</p>
+    <h1>About Shaik Sameer</h1>
+    <p class="project-summary">Software Developer · AI/ML Engineer · Technology Enthusiast</p>
+    <div class="about-page-content">
+      <img class="about-page-portrait" src="/static/images/sameer-profile.webp" alt="Shaik Sameer smiling in a floral shirt" width="460" height="460">
+      <div>
+        <p>Shaik Sameer, also known as Sam or Sameer, is a software developer and AI/ML engineer. His work spans automation, backend systems, applied machine learning, and tools designed to make technical workflows easier to use.</p>
+        <p>He works as an IT Executive focused on software and automation at Agile CAS. His portfolio includes projects in geospatial analysis, database query assistance, machine-learning screening tools, recommendation systems, and web applications.</p>
+        <p>Sameer earned a B.Tech in Artificial Intelligence and Data Science from Aditya College of Engineering, Madanapalle. The project pages describe the implementation details, technology choices, and available demos or repositories.</p>
+        <div class="project-resource-links">
+          <a class="button button-primary" href="/#work">Explore projects</a>
+          <a class="button button-secondary" href="mailto:shaiksameershubhan71@gmail.com">Contact Sameer</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="project-page-footer"><a href="/">Shaik Sameer</a><span>Software Developer · AI/ML Engineer</span></footer>
+</body>
+</html>
