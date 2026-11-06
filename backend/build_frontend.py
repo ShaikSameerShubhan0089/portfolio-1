@@ -39,14 +39,37 @@ def main():
     html = "\n".join(line.rstrip() for line in html.splitlines()) + "\n"
     output.write_text(html, encoding="utf-8")
     site = escape(SITE_URL.rstrip("/"))
+    gallery_images = [
+        ('sameer-profile.webp', 'Shaik Sameer profile portrait', 'Shaik Sameer smiling in a floral shirt'),
+        ('sameer-portrait.webp', 'Shaik Sameer speaking at a college event', 'Shaik Sameer speaking into a microphone at a college event'),
+        ('sameer-about.webp', 'Shaik Sameer casual portrait', 'Shaik Sameer smiling at a table in a red shirt'),
+        ('shaik-sameer-seated-cream-suit-edit-1.jpg', 'Shaik Sameer seated in a cream suit, looking down', 'Seated portrait · Cream suit'),
+        ('shaik-sameer-seated-cream-suit-edit-2.jpg', 'Shaik Sameer smiling while seated in a cream suit', 'Seated portrait · Cream suit'),
+        ('shaik-sameer-courtyard-white-shirt-edited.jpg', 'Shaik Sameer standing in a white shirt in a courtyard', 'Portrait · Courtyard'),
+        ('shaik-sameer-cafe-portrait-edited.jpg', 'Shaik Sameer smiling at an outdoor cafe', 'Portrait · Cafe'),
+        ('shaik-sameer-event-coat-edited.jpg', 'Shaik Sameer wearing a light coat and scarf at an event', 'Portrait · Evening event'),
+        ('shaik-sameer-courtyard-white-shirt-portrait.jpg', 'Shaik Sameer standing outdoors in a white shirt and dark trousers', 'Portrait · Outdoors'),
+        ('shaik-sameer-courtyard-white-shirt-smiling.jpg', 'Shaik Sameer smiling in a white shirt in a courtyard', 'Portrait · Courtyard'),
+        ('shaik-sameer-navy-shirt-portrait-edited.jpg', 'Shaik Sameer standing in a navy T-shirt and light trousers', 'Portrait · Navy T-shirt'),
+        ('shaik-sameer-white-shirt-walking-edited.jpg', 'Shaik Sameer walking outdoors in a white shirt', 'Portrait · Walking outdoors'),
+        ('shaik-sameer-traditional-attire-edited.jpg', 'Shaik Sameer seated in traditional attire at an event', 'Portrait · Traditional attire'),
+        ('shaik-sameer-light-blazer-portrait-edited.jpg', 'Shaik Sameer wearing a light blazer outdoors', 'Portrait · Light blazer'),
+        ('shaik-sameer-blue-shirt-portrait-edited.jpg', 'Shaik Sameer standing beside a doorway in a blue shirt', 'Portrait · Blue shirt'),
+    ]
+    image_entries = "\n".join(
+        "    <image:image>"
+        f"<image:loc>{site}/static/images/{escape(filename)}</image:loc>"
+        f"<image:title>{escape(title)}</image:title>"
+        f"<image:caption>{escape(caption)}</image:caption>"
+        "</image:image>"
+        for filename, title, caption in gallery_images
+    )
     sitemap = f'''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>{site}/</loc>
     <changefreq>monthly</changefreq>
-    <image:image><image:loc>{site}/static/images/sameer-profile.webp</image:loc><image:title>Shaik Sameer profile portrait</image:title><image:caption>Shaik Sameer smiling in a floral shirt</image:caption></image:image>
-    <image:image><image:loc>{site}/static/images/sameer-portrait.webp</image:loc><image:title>Shaik Sameer speaking at a college event</image:title><image:caption>Shaik Sameer speaking into a microphone at a college event</image:caption></image:image>
-    <image:image><image:loc>{site}/static/images/sameer-about.webp</image:loc><image:title>Shaik Sameer casual portrait</image:title><image:caption>Shaik Sameer smiling at a table in a red shirt</image:caption></image:image>
+{image_entries}
   </url>
 </urlset>
 '''
