@@ -23,7 +23,7 @@
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Shaik Sameer Portfolio">
   <meta property="og:url" content="{{ site_url }}/">
-  <meta property="og:image" content="{{ site_url }}/static/images/shaik-sameer-profile.webp">
+  <meta property="og:image" content="{{ site_url }}/static/images/sameer-profile.webp">
   <meta property="og:image:alt" content="Portrait of Shaik Sameer">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Shaik Sameer | Sam | Software Developer &amp; AI/ML Engineer">
@@ -36,7 +36,7 @@
   {
     "@context":"https://schema.org",
     "@graph":[
-      {"@type":"Person","@id":"{{ site_url }}/#person","name":"Shaik Sameer","alternateName":["Sameer","Sam"],"jobTitle":"Software Developer","description":"Software Developer and AI/ML Engineer","url":"{{ site_url }}/","image":"{{ site_url }}/static/images/shaik-sameer-profile.webp","sameAs":["https://www.linkedin.com/in/shaik-sameer-shubhan-2598563a0","https://github.com/ShaikSameerShubhan0089"]},
+      {"@type":"Person","@id":"{{ site_url }}/#person","name":"Shaik Sameer","alternateName":["Sameer","Sam"],"jobTitle":"Software Developer","description":"Software Developer and AI/ML Engineer","url":"{{ site_url }}/","image":"{{ site_url }}/static/images/sameer-profile.webp","sameAs":["https://www.linkedin.com/in/shaik-sameer-shubhan-2598563a0","https://github.com/ShaikSameerShubhan0089"]},
       {"@type":"WebSite","@id":"{{ site_url }}/#website","url":"{{ site_url }}/","name":"Shaik Sameer | Sam | Software Developer & AI/ML Engineer","inLanguage":"en","about":{"@id":"{{ site_url }}/#person"}},
       {"@type":"ProfilePage","@id":"{{ site_url }}/#profile","url":"{{ site_url }}/","name":"Shaik Sameer — Personal Portfolio","mainEntity":{"@id":"{{ site_url }}/#person"},"isPartOf":{"@id":"{{ site_url }}/#website"}}
     ]
@@ -119,7 +119,7 @@
               <div class="photo-stack" data-photo-stack>
                 <div class="photo-stack-inner">
                   <div class="photo-card" data-pos="0" data-caption="Portrait">
-                    <img src="{{ url_for('static', filename='images/sameer-profile.webp') }}" alt="Shaik Sameer smiling, seated, in a floral shirt" width="460" height="460" fetchpriority="high">
+                    <img src="{{ url_for('static', filename='images/sameer-profile.webp') }}" alt="Shaik Sameer smiling, seated, in a floral shirt" width="460" height="460" loading="eager" fetchpriority="high">
                   </div>
                   <div class="photo-card" data-pos="1" data-caption="On stage">
                     <img src="{{ url_for('static', filename='images/sameer-portrait.webp') }}" alt="Shaik Sameer speaking into a microphone at a college event" width="640" height="792" loading="lazy">
