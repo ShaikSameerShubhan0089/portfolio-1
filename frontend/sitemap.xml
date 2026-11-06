@@ -3,8 +3,8 @@
   <url>
     <loc>https://shaiksameershubhan.netlify.app/</loc>
     <changefreq>monthly</changefreq>
-    <image:image><image:loc>https://shaiksameershubhan.netlify.app/static/images/shaik-sameer-profile.webp</image:loc><image:title>Shaik Sameer profile portrait</image:title></image:image>
-    <image:image><image:loc>https://shaiksameershubhan.netlify.app/static/images/shaik-sameer-college-event.webp</image:loc><image:title>Shaik Sameer speaking at a college event</image:title></image:image>
-    <image:image><image:loc>https://shaiksameershubhan.netlify.app/static/images/shaik-sameer-casual-portrait.webp</image:loc><image:title>Shaik Sameer casual portrait</image:title></image:image>
+    <image:image><image:loc>https://shaiksameershubhan.netlify.app/static/images/sameer-profile.webp</image:loc><image:title>Shaik Sameer profile portrait</image:title><image:caption>Shaik Sameer smiling in a floral shirt</image:caption></image:image>
+    <image:image><image:loc>https://shaiksameershubhan.netlify.app/static/images/sameer-portrait.webp</image:loc><image:title>Shaik Sameer speaking at a college event</image:title><image:caption>Shaik Sameer speaking into a microphone at a college event</image:caption></image:image>
+    <image:image><image:loc>https://shaiksameershubhan.netlify.app/static/images/sameer-about.webp</image:loc><image:title>Shaik Sameer casual portrait</image:title><image:caption>Shaik Sameer smiling at a table in a red shirt</image:caption></image:image>
   </url>
 </urlset>
