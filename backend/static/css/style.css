@@ -1308,7 +1308,8 @@ main {
 .photo-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   user-select: none;
   -webkit-user-drag: none;
 }
@@ -1324,6 +1325,8 @@ main {
   transform: translate3d(calc(-6% - var(--spread) * 4%), calc(-3.5% - var(--spread) * 2%), calc(-60px - var(--spread) * 50px))
     rotateZ(calc(-4deg - var(--spread) * 2deg));
 }
+
+.photo-card:not([data-pos="0"]):not([data-pos="1"]):not([data-pos="2"]) { visibility: hidden; }
 
 .photo-card[data-pos="2"] {
   z-index: 1;
