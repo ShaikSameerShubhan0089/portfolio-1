@@ -44,6 +44,11 @@
 .about-page-links { margin-top: 44px; padding-top: 26px; border-top: 1px solid var(--line); }
 .about-page-links h2 { margin: 0; font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; letter-spacing: -.04em; }
 .about-page-links ul { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 18px 0 0; padding: 0; list-style: none; }
+.about-contribution-card { min-width: 0; margin-top: 22px; padding: clamp(20px, 3vw, 30px); border: 1px solid var(--line); background: var(--surface); }
+.about-contribution-card h3 { margin: 0; font-family: var(--font-display); font-size: clamp(1.35rem, 2.5vw, 1.85rem); font-weight: 400; letter-spacing: -.035em; line-height: 1.2; }
+.about-contribution-card p { margin: 16px 0 0; color: var(--muted); line-height: 1.75; }
+.about-contribution-card h4 { margin: 22px 0 0; font-size: .95rem; }
+.about-contribution-card .project-tech-list { flex-wrap: wrap; }
 .photo-gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); align-items: start; gap: clamp(16px, 2.5vw, 28px); margin-top: clamp(38px, 6vw, 64px); }
 .photo-gallery-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
 .photo-gallery-card img { display: block; width: 100%; height: auto; object-fit: contain; }
