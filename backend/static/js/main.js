@@ -247,22 +247,35 @@ function setupHeroPhotos() {
   const caption = document.querySelector(".photo-caption-text");
   const intro = document.getElementById("intro");
   const total = String(cards.length).padStart(2, "0");
+  const thumbnails = Array.from(document.querySelectorAll("[data-photo-index]"));
+  let activeIndex = Math.max(0, cards.findIndex((card) => card.dataset.pos === "0"));
 
-  const cycle = () => {
-    cards.forEach((card) => {
-      const pos = (Number(card.dataset.pos) + cards.length - 1) % cards.length;
-      card.dataset.pos = String(pos);
-      if (pos === 0) {
-        const index = cards.indexOf(card);
-        if (count) {
-          count.textContent = `${String(index + 1).padStart(2, "0")} / ${total}`;
-        }
-        if (caption) {
-          caption.textContent = card.dataset.caption || "";
-        }
-      }
+  const setActive = (index) => {
+    activeIndex = (index + cards.length) % cards.length;
+    cards.forEach((card, cardIndex) => {
+      card.dataset.pos = String((cardIndex - activeIndex + cards.length) % cards.length);
+    });
+    if (count) {
+      count.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${total}`;
+    }
+    if (caption) {
+      caption.textContent = cards[activeIndex].dataset.caption || "";
+    }
+    thumbnails.forEach((button, buttonIndex) => {
+      const selected = buttonIndex === activeIndex;
+      button.classList.toggle("is-active", selected);
+      button.setAttribute("aria-pressed", String(selected));
     });
   };
+
+  const cycle = () => setActive(activeIndex + 1);
+  thumbnails.forEach((button) => {
+    button.addEventListener("click", () => {
+      const requestedIndex = Number(button.dataset.photoIndex);
+      if (Number.isInteger(requestedIndex)) setActive(requestedIndex);
+    });
+  });
+  setActive(activeIndex);
 
   stack.addEventListener("click", cycle);
   if (next) {

@@ -3215,3 +3215,44 @@ main {
     border-color: #ccc;
   }
 }
+
+
+/* A visible selector keeps every portfolio photo discoverable beside the hero rotator. */
+.photo-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+  width: var(--card-w);
+  margin: 12px auto 0;
+}
+.photo-thumbnail {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  padding: 2px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: max(2px, calc(var(--radius) * .45));
+  background: var(--panel-2);
+  opacity: .76;
+  cursor: pointer;
+  transition: opacity var(--fast) var(--ease), border-color var(--fast) var(--ease), transform var(--fast) var(--ease);
+}
+.photo-thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.photo-thumbnail:hover,
+.photo-thumbnail:focus-visible,
+.photo-thumbnail.is-active {
+  opacity: 1;
+  border-color: var(--hl);
+}
+.photo-thumbnail:hover { transform: translateY(-2px); }
+.photo-thumbnail:focus-visible { outline: 2px solid var(--hl); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  .photo-thumbnail { transition: none; }
+}
