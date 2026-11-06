@@ -40,6 +40,14 @@
 .about-page-content { display: grid; grid-template-columns: minmax(180px, .65fr) minmax(0, 1.35fr); align-items: start; gap: clamp(32px, 7vw, 90px); margin-top: clamp(42px, 7vw, 76px); }
 .about-page-portrait { display: block; width: 100%; max-width: 390px; aspect-ratio: 4 / 5; object-fit: cover; border: 1px solid var(--line); }
 .about-page-content p { margin-bottom: 18px; color: var(--muted); font-size: 1.05rem; line-height: 1.8; }
+.about-page-content a, .about-page-links a { color: var(--primary); text-decoration: underline; text-underline-offset: 4px; }
+.about-page-links { margin-top: 44px; padding-top: 26px; border-top: 1px solid var(--line); }
+.about-page-links h2 { margin: 0; font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; letter-spacing: -.04em; }
+.about-page-links ul { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 18px 0 0; padding: 0; list-style: none; }
+.photo-gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); align-items: start; gap: clamp(16px, 2.5vw, 28px); margin-top: clamp(38px, 6vw, 64px); }
+.photo-gallery-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
+.photo-gallery-card img { display: block; width: 100%; height: auto; object-fit: contain; }
+.photo-gallery-card figcaption { padding: 14px 16px 16px; color: var(--muted); font-size: .94rem; line-height: 1.55; }
 @media (max-width: 760px) {
   .project-site-header { align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; padding-block: 14px; }
   .project-page-grid, .about-page-content { grid-template-columns: 1fr; }

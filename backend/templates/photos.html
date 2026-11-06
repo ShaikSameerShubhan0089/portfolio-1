@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photos of Shaik Sameer</title>
+  <meta name="description" content="Personal photographs of Shaik Sameer, also known as Sam or Sameer, including portraits, everyday photos and an event photograph.">
+  <meta name="author" content="Shaik Sameer">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="{{ site_url }}/photos/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Shaik Sameer Portfolio">
+  <meta property="og:title" content="Photos of Shaik Sameer">
+  <meta property="og:description" content="Personal photographs of Shaik Sameer, also known as Sam or Sameer, including portraits, everyday photos and an event photograph.">
+  <meta property="og:url" content="{{ site_url }}/photos/">
+  <meta property="og:image" content="{{ site_url }}/static/images/sameer-profile.webp">
+  <meta property="og:image:alt" content="Shaik Sameer smiling in a floral shirt">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Photos of Shaik Sameer">
+  <meta name="twitter:description" content="Personal photographs of Shaik Sameer, also known as Sam or Sameer.">
+  <meta name="twitter:image" content="{{ site_url }}/static/images/sameer-profile.webp">
+  <link rel="icon" href="/static/images/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/project-pages.css">
+  <script type="application/ld+json">{{ {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Photos of Shaik Sameer",
+    "description": "Personal photographs of Shaik Sameer, also known as Sam or Sameer, including portraits, everyday photos and an event photograph.",
+    "url": site_url ~ "/photos/",
+    "isPartOf": {"@type": "WebSite", "name": "Shaik Sameer Portfolio", "url": site_url ~ "/"}
+  } | tojson }}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to photos</a>
+  <header class="project-site-header">
+    <a class="wordmark" href="/" aria-label="Shaik Sameer homepage">Shaik Sameer</a>
+    <nav aria-label="Main"><a href="/">Home</a><a href="/about/">About</a><a href="/photos/" aria-current="page">Photos</a></nav>
+  </header>
+  <main id="main" class="project-page photos-page container">
+    <p class="mono-label project-eyebrow">Sam · Sameer · Shaik Sameer</p>
+    <h1>Photos of Shaik Sameer</h1>
+    <p class="project-summary">A collection of personal photographs of Shaik Sameer, also known as Sam or Sameer. The photos include portraits, everyday moments and a college event.</p>
+    <section class="photo-gallery-grid" aria-label="Personal photographs of Shaik Sameer">
+      {% for photo in photos %}
+      <figure class="photo-gallery-card">
+        <img src="{{ url_for('static', filename='images/' ~ photo.filename) }}" alt="{{ photo.alt }}" width="{{ photo.width }}" height="{{ photo.height }}" {% if loop.first %}loading="eager" fetchpriority="high"{% else %}loading="lazy" decoding="async"{% endif %}>
+        <figcaption>{{ photo.caption }}</figcaption>
+      </figure>
+      {% endfor %}
+    </section>
+    <nav class="project-page-backlinks" aria-label="More about Shaik Sameer">
+      <a href="/about/">About Shaik Sameer</a>
+      <a href="/">Portfolio homepage</a>
+    </nav>
+  </main>
+  <footer class="project-page-footer"><a href="/">Shaik Sameer</a><span>Personal photo collection</span></footer>
+</body>
+</html>

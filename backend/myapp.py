@@ -17,7 +17,8 @@ from urllib.parse import quote
 import requests
 from dotenv import load_dotenv
 from flask import Flask, jsonify, redirect, render_template, request, send_from_directory, url_for
-from project_pages import ABOUT, PROJECTS_BY_SLUG
+from project_pages import ABOUT, PROJECTS, PROJECTS_BY_SLUG
+from photos import PHOTOS
 from itsdangerous import BadSignature, SignatureExpired, URLSafeTimedSerializer
 from werkzeug.middleware.proxy_fix import ProxyFix
 
@@ -351,7 +352,12 @@ def index():
 
 @app.route("/about/")
 def about_page():
-    return render_template("about.html", site_url=SITE_URL, about=ABOUT)
+    return render_template("about.html", site_url=SITE_URL, about=ABOUT, projects=PROJECTS)
+
+
+@app.route("/photos/")
+def photos_page():
+    return render_template("photos.html", site_url=SITE_URL, photos=PHOTOS)
 
 
 @app.route("/projects/<slug>/")
