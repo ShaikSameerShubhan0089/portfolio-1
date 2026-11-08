@@ -8,6 +8,26 @@ from myapp import SITE_URL, app
 from project_pages import ABOUT, PROJECTS
 from photos import PHOTOS
 
+IMAGE_REDIRECTS = {
+    "sameer-profile.webp": "shaik-sameer-profile.webp",
+    "sameer-portrait.webp": "shaik-sameer-college-event-speaking.webp",
+    "sameer-about.webp": "shaik-sameer-casual-portrait.webp",
+    "shaik-sameer-seated-cream-suit-edit-1.jpg": "shaik-sameer-cream-suit-seated-portrait-1.jpg",
+    "shaik-sameer-seated-cream-suit-edit-2.jpg": "shaik-sameer-cream-suit-smiling-portrait.jpg",
+    "shaik-sameer-courtyard-white-shirt-edited.jpg": "shaik-sameer-white-shirt-courtyard-portrait.jpg",
+    "shaik-sameer-cafe-portrait-edited.jpg": "shaik-sameer-outdoor-cafe-portrait.jpg",
+    "shaik-sameer-event-coat-edited.jpg": "shaik-sameer-event-coat-scarf-portrait.jpg",
+    "shaik-sameer-courtyard-white-shirt-portrait.jpg": "shaik-sameer-courtyard-standing-portrait.jpg",
+    "shaik-sameer-courtyard-white-shirt-smiling.jpg": "shaik-sameer-courtyard-smiling-portrait.jpg",
+    "shaik-sameer-navy-shirt-portrait-edited.jpg": "shaik-sameer-navy-shirt-standing-portrait.jpg",
+    "shaik-sameer-white-shirt-walking-edited.jpg": "shaik-sameer-white-shirt-walking-portrait.jpg",
+    "shaik-sameer-traditional-attire-edited.jpg": "shaik-sameer-traditional-attire-event-portrait.jpg",
+    "shaik-sameer-light-blazer-portrait-edited.jpg": "shaik-sameer-light-blazer-outdoor-portrait.jpg",
+    "shaik-sameer-blue-shirt-portrait-edited.jpg": "shaik-sameer-blue-shirt-standing-portrait.jpg",
+    # This older duplicate filename was also published and should resolve to the renamed event photo.
+    "shaik-sameer-college-event.webp": "shaik-sameer-college-event-speaking.webp",
+}
+
 
 def main():
     parser = argparse.ArgumentParser(description="Build the static portfolio and search files.")
@@ -54,23 +74,32 @@ def main():
             page = app.jinja_env.get_template("project_detail.html").render(site_url=SITE_URL, project=project)
             (project_dir / "index.html").write_text(page, encoding="utf-8")
     site = escape(SITE_URL.rstrip("/"))
-    image_entries = "\n".join(
-        "    <image:image>"
-        f"<image:loc>{site}/static/images/{escape(photo['filename'])}</image:loc>"
-        f"<image:title>{escape(photo['title'])}</image:title>"
-        f"<image:caption>{escape(photo['sitemap_caption'])}</image:caption>"
-        "</image:image>"
-        for photo in PHOTOS
-    )
+    def image_entries(photos):
+        return "\n".join(
+            "    <image:image>"
+            f"<image:loc>{site}/static/images/{escape(photo['filename'])}</image:loc>"
+            f"<image:title>{escape(photo['title'])}</image:title>"
+            f"<image:caption>{escape(photo['sitemap_caption'])}</image:caption>"
+            "</image:image>"
+            for photo in photos
+        )
+
+    profile_photo = next(photo for photo in PHOTOS if photo["filename"] == "shaik-sameer-profile.webp")
     sitemap = f'''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>{site}/</loc>
     <changefreq>monthly</changefreq>
-{image_entries}
+{image_entries(PHOTOS)}
   </url>
-  <url><loc>{site}/about/</loc></url>
-  <url><loc>{site}/photos/</loc></url>
+  <url>
+    <loc>{site}/about/</loc>
+{image_entries([profile_photo])}
+  </url>
+  <url>
+    <loc>{site}/photos/</loc>
+{image_entries(PHOTOS)}
+  </url>
 {''.join(f'  <url><loc>{site}/projects/{escape(project["slug"])}/</loc></url>\n' for project in PROJECTS)}
 </urlset>
 '''
@@ -79,6 +108,11 @@ def main():
         f"User-agent: *\nAllow: /\nDisallow: /admin/\nSitemap: {site}/sitemap.xml\n",
         encoding="utf-8",
     )
+    redirects = "\n".join(
+        f"/static/images/{old} /static/images/{new} 301"
+        for old, new in IMAGE_REDIRECTS.items()
+    ) + "\n"
+    (output.parent / "_redirects").write_text(redirects, encoding="utf-8")
     print(f"Built homepage, {len(PROJECTS)} project pages, about page, photo gallery, sitemap.xml, and robots.txt for {SITE_URL}")
 
 

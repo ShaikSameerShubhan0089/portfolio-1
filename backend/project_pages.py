@@ -126,5 +126,5 @@ ABOUT = {
     "name": "Shaik Sameer",
     "alternate_names": "Sam · Sameer",
     "title": "About Shaik Sameer",
-    "description": "About Shaik Sameer (Sam), a software developer and AI/ML engineer working on automation, backend systems, and machine-learning projects.",
+    "description": "About Shaik Sameer, also known as Sam or Sameer: an IT Executive focused on software and automation, with a B.Tech in Artificial Intelligence and Data Science and projects in software development and AI/ML.",
 }

@@ -2,7 +2,7 @@
 
 PHOTOS = [
     {
-        "filename": "sameer-profile.webp",
+        "filename": "shaik-sameer-profile.webp",
         "alt": "Shaik Sameer smiling, seated, in a floral shirt",
         "caption": "Shaik Sameer smiling in a floral shirt",
         "title": "Shaik Sameer profile portrait",
@@ -11,7 +11,7 @@ PHOTOS = [
         "height": 460,
     },
     {
-        "filename": "sameer-portrait.webp",
+        "filename": "shaik-sameer-college-event-speaking.webp",
         "alt": "Shaik Sameer speaking into a microphone at a college event",
         "caption": "Shaik Sameer speaking into a microphone at a college event",
         "title": "Shaik Sameer speaking at a college event",
@@ -20,7 +20,7 @@ PHOTOS = [
         "height": 792,
     },
     {
-        "filename": "sameer-about.webp",
+        "filename": "shaik-sameer-casual-portrait.webp",
         "alt": "Shaik Sameer smiling, seated at a table in a red shirt",
         "caption": "Shaik Sameer smiling at a table in a red shirt",
         "title": "Shaik Sameer casual portrait",
@@ -29,7 +29,7 @@ PHOTOS = [
         "height": 645,
     },
     {
-        "filename": "shaik-sameer-seated-cream-suit-edit-1.jpg",
+        "filename": "shaik-sameer-cream-suit-seated-portrait-1.jpg",
         "alt": "Shaik Sameer seated in a cream suit, looking down",
         "caption": "Shaik Sameer seated in a cream suit, looking down",
         "title": "Shaik Sameer seated in a cream suit, looking down",
@@ -38,7 +38,7 @@ PHOTOS = [
         "height": 864,
     },
     {
-        "filename": "shaik-sameer-seated-cream-suit-edit-2.jpg",
+        "filename": "shaik-sameer-cream-suit-smiling-portrait.jpg",
         "alt": "Shaik Sameer smiling while seated in a cream suit",
         "caption": "Shaik Sameer smiling while seated in a cream suit",
         "title": "Shaik Sameer smiling while seated in a cream suit",
@@ -47,7 +47,7 @@ PHOTOS = [
         "height": 926,
     },
     {
-        "filename": "shaik-sameer-courtyard-white-shirt-edited.jpg",
+        "filename": "shaik-sameer-white-shirt-courtyard-portrait.jpg",
         "alt": "Shaik Sameer standing in a white shirt in a courtyard",
         "caption": "Shaik Sameer standing in a white shirt in a courtyard",
         "title": "Shaik Sameer standing in a white shirt in a courtyard",
@@ -56,7 +56,7 @@ PHOTOS = [
         "height": 953,
     },
     {
-        "filename": "shaik-sameer-cafe-portrait-edited.jpg",
+        "filename": "shaik-sameer-outdoor-cafe-portrait.jpg",
         "alt": "Shaik Sameer smiling at an outdoor cafe",
         "caption": "Shaik Sameer smiling at an outdoor cafe",
         "title": "Shaik Sameer smiling at an outdoor cafe",
@@ -65,7 +65,7 @@ PHOTOS = [
         "height": 926,
     },
     {
-        "filename": "shaik-sameer-event-coat-edited.jpg",
+        "filename": "shaik-sameer-event-coat-scarf-portrait.jpg",
         "alt": "Shaik Sameer wearing a light coat and scarf at an event",
         "caption": "Shaik Sameer wearing a light coat and scarf at an event",
         "title": "Shaik Sameer wearing a light coat and scarf at an event",
@@ -74,7 +74,7 @@ PHOTOS = [
         "height": 957,
     },
     {
-        "filename": "shaik-sameer-courtyard-white-shirt-portrait.jpg",
+        "filename": "shaik-sameer-courtyard-standing-portrait.jpg",
         "alt": "Shaik Sameer standing outdoors in a white shirt and dark trousers",
         "caption": "Shaik Sameer standing outdoors in a white shirt and dark trousers",
         "title": "Shaik Sameer standing outdoors in a white shirt and dark trousers",
@@ -83,7 +83,7 @@ PHOTOS = [
         "height": 1280,
     },
     {
-        "filename": "shaik-sameer-courtyard-white-shirt-smiling.jpg",
+        "filename": "shaik-sameer-courtyard-smiling-portrait.jpg",
         "alt": "Shaik Sameer smiling in a white shirt in a courtyard",
         "caption": "Shaik Sameer smiling in a white shirt in a courtyard",
         "title": "Shaik Sameer smiling in a white shirt in a courtyard",
@@ -92,7 +92,7 @@ PHOTOS = [
         "height": 1245,
     },
     {
-        "filename": "shaik-sameer-navy-shirt-portrait-edited.jpg",
+        "filename": "shaik-sameer-navy-shirt-standing-portrait.jpg",
         "alt": "Shaik Sameer standing in a navy T-shirt and light trousers",
         "caption": "Shaik Sameer standing in a navy T-shirt and light trousers",
         "title": "Shaik Sameer standing in a navy T-shirt and light trousers",
@@ -101,7 +101,7 @@ PHOTOS = [
         "height": 1550,
     },
     {
-        "filename": "shaik-sameer-white-shirt-walking-edited.jpg",
+        "filename": "shaik-sameer-white-shirt-walking-portrait.jpg",
         "alt": "Shaik Sameer walking outdoors in a white shirt",
         "caption": "Shaik Sameer walking outdoors in a white shirt",
         "title": "Shaik Sameer walking outdoors in a white shirt",
@@ -110,7 +110,7 @@ PHOTOS = [
         "height": 1225,
     },
     {
-        "filename": "shaik-sameer-traditional-attire-edited.jpg",
+        "filename": "shaik-sameer-traditional-attire-event-portrait.jpg",
         "alt": "Shaik Sameer seated in traditional attire at an event",
         "caption": "Shaik Sameer seated in traditional attire at an event",
         "title": "Shaik Sameer seated in traditional attire at an event",
@@ -119,7 +119,7 @@ PHOTOS = [
         "height": 1190,
     },
     {
-        "filename": "shaik-sameer-light-blazer-portrait-edited.jpg",
+        "filename": "shaik-sameer-light-blazer-outdoor-portrait.jpg",
         "alt": "Shaik Sameer wearing a light blazer outdoors",
         "caption": "Shaik Sameer wearing a light blazer outdoors",
         "title": "Shaik Sameer wearing a light blazer outdoors",
@@ -128,7 +128,7 @@ PHOTOS = [
         "height": 1294,
     },
     {
-        "filename": "shaik-sameer-blue-shirt-portrait-edited.jpg",
+        "filename": "shaik-sameer-blue-shirt-standing-portrait.jpg",
         "alt": "Shaik Sameer standing beside a doorway in a blue shirt",
         "caption": "Shaik Sameer standing beside a doorway in a blue shirt",
         "title": "Shaik Sameer standing beside a doorway in a blue shirt",

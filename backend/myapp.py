@@ -94,7 +94,7 @@ PORTFOLIO_FACTS = """
 PERSONAL INFORMATION:
 - Name: Shaik Sameer (also known as Sameer, Sam, and Shaik Sameer Shubhan)
 - Email: shaiksameershubhan71@gmail.com
-- LinkedIn: https://www.linkedin.com/in/shaik-sameer-shubhan-2598563a0
+- LinkedIn: https://www.linkedin.com/in/sameer-smr/
 - GitHub: https://github.com/ShaikSameerShubhan0089
 - Phone: +91 9652879470
 - Location: Andhra Pradesh, India
