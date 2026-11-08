@@ -2208,6 +2208,36 @@ main {
   color: var(--muted);
 }
 
+/* Social profiles ------------------------------------------------------ */
+.contact-social { margin-top: 1.5rem; }
+.contact-social .sub-title { margin: 0 0 .75rem; }
+.social-profile-links { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem; }
+.social-profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-height: 42px;
+  max-width: 100%;
+  padding: .45rem .65rem;
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-size: .875rem;
+  text-decoration: none;
+  transition: border-color var(--fast) var(--ease), color var(--fast) var(--ease), background var(--fast) var(--ease);
+}
+.social-profile-links a:hover { border-color: var(--hl); color: var(--primary); }
+.social-profile-links a:focus-visible { outline: 2px solid var(--hl); outline-offset: 3px; }
+.social-profile-links svg { width: 19px; height: 19px; flex: 0 0 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.social-profile-links .social-icon-dot { fill: currentColor; stroke: none; }
+.footer-bar .social-profile-links { margin-left: auto; }
+.footer-bar .social-profile-links a { width: 40px; min-height: 40px; justify-content: center; padding: .45rem; }
+.footer-bar .social-profile-links a span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+
+@media (max-width: 600px) {
+  .footer-bar .social-profile-links { margin-left: 0; }
+  .social-profile-links a { gap: .4rem; padding-inline: .55rem; font-size: .8125rem; }
+}
+
 /* Reveal ----------------------------------------------------------------- */
 
 .js .reveal {

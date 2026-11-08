@@ -242,7 +242,7 @@
     const thinking = appendMessage("bot is-thinking", "Laddu is thinking…");
 
     try {
-      const response = await fetch(`${window.PORTFOLIO_API_BASE || "http://localhost:5000"}/api/chat`, {
+      const response = await fetch(`${window.PORTFOLIO_API_BASE || ""}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

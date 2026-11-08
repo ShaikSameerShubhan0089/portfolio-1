@@ -74,24 +74,31 @@ def main():
             page = app.jinja_env.get_template("project_detail.html").render(site_url=SITE_URL, project=project)
             (project_dir / "index.html").write_text(page, encoding="utf-8")
     site = escape(SITE_URL.rstrip("/"))
-    image_entries = "\n".join(
-        "    <image:image>"
-        f"<image:loc>{site}/static/images/{escape(photo['filename'])}</image:loc>"
-        f"<image:title>{escape(photo['title'])}</image:title>"
-        f"<image:caption>{escape(photo['sitemap_caption'])}</image:caption>"
-        "</image:image>"
-        for photo in PHOTOS
-    )
+    def image_entries(photos):
+        return "\n".join(
+            "    <image:image>"
+            f"<image:loc>{site}/static/images/{escape(photo['filename'])}</image:loc>"
+            f"<image:title>{escape(photo['title'])}</image:title>"
+            f"<image:caption>{escape(photo['sitemap_caption'])}</image:caption>"
+            "</image:image>"
+            for photo in photos
+        )
+
+    profile_photo = next(photo for photo in PHOTOS if photo["filename"] == "shaik-sameer-profile.webp")
     sitemap = f'''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>{site}/</loc>
     <changefreq>monthly</changefreq>
+{image_entries(PHOTOS)}
   </url>
-  <url><loc>{site}/about/</loc></url>
+  <url>
+    <loc>{site}/about/</loc>
+{image_entries([profile_photo])}
+  </url>
   <url>
     <loc>{site}/photos/</loc>
-{image_entries}
+{image_entries(PHOTOS)}
   </url>
 {''.join(f'  <url><loc>{site}/projects/{escape(project["slug"])}/</loc></url>\n' for project in PROJECTS)}
 </urlset>
